@@ -1,0 +1,498 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software Development - Cyber Host Technologies</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/service-pages.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body class="page-service-detail">
+  <!-- Code Animation Background -->
+  <div class="code-animation-bg">
+    <div class="code-line" style="--delay: 0s;">const createSolution = (clientNeeds) => {</div>
+    <div class="code-line" style="--delay: 2s;">  return customSoftware.build({</div>
+    <div class="code-line" style="--delay: 4s;">    responsive: true,</div>
+    <div class="code-line" style="--delay: 6s;">    offlineCapable: true,</div>
+    <div class="code-line" style="--delay: 8s;">    scalable: true</div>
+    <div class="code-line" style="--delay: 10s;">  });</div>
+    <div class="code-line" style="--delay: 12s;">};</div>
+  </div>
+  
+  <!-- Background image with gradient overlay -->
+  <div class="background"></div>
+  <div class="gradient-overlay"></div>
+  
+  <!-- Header container for fixed elements -->
+  <div class="header-container">
+    <!-- Fixed Logo -->
+    <div class="logo-wrapper">
+      <a href="{% url 'home' %}">
+        <img src="{% static 'images/logo.png' %}" alt="Cyber Host Logo" class="fixed-logo" />
+      </a>
+      <span class="tooltip">Cyber Host</span>
+    </div>
+
+    <!-- Top Right Navigation -->
+    <div class="nav-wrapper">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>  
+      <nav class="top-nav" id="main-nav">
+        <a href="{% url 'home' %}" class="top-link">Home</a>
+        <a href="{% url 'mission' %}" class="top-link">Our Mission</a>
+        <a href="{% url 'services' %}" class="top-link active">Services</a>
+        <a href="{% url 'about' %}" class="top-link">About Us</a>
+        <a href="{% url 'contact' %}" class="top-link">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Animated Page Header -->
+  <div class="page-header animate__animated animate__fadeIn">
+    <div class="container">
+      <div class="header-content">
+        <div class="service-icon-large animate__animated animate__bounceIn animate__delay-1s">
+          <i class="fas fa-code"></i>
+        </div>
+        <h1 class="animate__animated animate__fadeInUp animate__delay-1s">Software Development</h1>
+        <div class="header-line animate__animated animate__fadeInLeft animate__delay-1s"></div>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">Custom software solutions tailored to your specific business needs</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Detail Section with Interactive Elements -->
+  <section class="service-detail-enhanced">
+    <div class="floating-tech-elements">
+      <div class="tech-element" style="--delay: 0s;"><i class="fab fa-react"></i></div>
+      <div class="tech-element" style="--delay: 2s;"><i class="fab fa-python"></i></div>
+      <div class="tech-element" style="--delay: 4s;"><i class="fab fa-js"></i></div>
+      <div class="tech-element" style="--delay: 6s;"><i class="fab fa-node-js"></i></div>
+      <div class="tech-element" style="--delay: 8s;"><i class="fas fa-database"></i></div>
+    </div>
+    
+    <div class="container">
+      <div class="service-content reveal-on-scroll">
+        <h2 class="gradient-text">Custom Software Solutions for African Challenges</h2>
+        <p class="enhanced-text">We develop <span class="highlight-text">tailored software solutions</span> that address your unique business challenges within the African context. From mobile applications optimized for <span class="highlight-text">low-bandwidth environments</span> to enterprise systems designed for <span class="highlight-text">unreliable power scenarios</span>, our team of experienced developers creates robust, scalable, and user-friendly software that helps you achieve your goals.</p>
+      
+        <div class="service-features-enhanced">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h4>Mobile App Development</h4>
+            <p>Native and cross-platform mobile applications for iOS and Android, with offline capabilities and low-data consumption features specifically designed for African markets.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-desktop"></i>
+            </div>
+            <h4>Web Applications</h4>
+            <p>Responsive, feature-rich web applications with modern user interfaces that work reliably even in areas with inconsistent connectivity, including progressive web app capabilities.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-database"></i>
+            </div>
+            <h4>Enterprise Systems</h4>
+            <p>Comprehensive business management systems tailored to your workflow, with robust offline synchronization and data integrity features to handle challenging infrastructure environments.</p>
+          </div>
+        </div>
+      
+        <a href="{% url 'contact' %}" class="cta-btn-enhanced">
+          <span>Discuss Your Project</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    
+      <!-- IMAGE PLACEHOLDER with animation -->
+      <div class="service-image reveal-on-scroll">
+        <div class="image-placeholder-enhanced">
+          <div class="image-icon-animated">
+            <i class="fas fa-code"></i>
+          </div>
+          <p>Our development team working on a custom inventory management system for a rural agricultural cooperative, featuring offline capabilities and SMS notifications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Development Process Section with Interactive Timeline -->
+  <section class="development-process-enhanced reveal-on-scroll">
+    <div class="section-waves">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#ffa500" fill-opacity="0.2" d="M0,192L48,176C96,160,192,128,288,122.7C384,117,480,139,576,165.3C672,192,768,224,864,213.3C960,203,1056,149,1152,138.7C1248,128,1344,160,1392,176L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+      </svg>
+    </div>
+    
+    <div class="container">
+      <h2 class="section-title-enhanced">Our Development Process</h2>
+      
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <div class="step-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3>Discovery & Planning</h3>
+            <p>We work closely with you to understand your requirements, goals, and challenges to create a comprehensive project plan.</p>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <div class="step-icon">
+              <i class="fas fa-pencil-ruler"></i>
+            </div>
+            <h3>Design & Prototyping</h3>
+            <p>Our designers create intuitive user interfaces and workflows, which we prototype for your feedback before development begins.</p>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <div class="step-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Development</h3>
+            <p>Our experienced developers build your solution using modern technologies and best practices, with regular updates and demos.</p>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <div class="step-icon">
+              <i class="fas fa-vial"></i>
+            </div>
+            <h3>Testing & Quality Assurance</h3>
+            <p>Rigorous testing ensures your software is reliable, secure, and performs well under various conditions.</p>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">05</div>
+          <div class="step-content">
+            <div class="step-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Deployment & Support</h3>
+            <p>We handle the deployment process and provide ongoing support and maintenance to keep your software running smoothly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies Section with Animated Grid -->
+  <section class="technologies-enhanced reveal-on-scroll">
+    <div class="container">
+      <h2 class="section-title-enhanced">Technologies We Use</h2>
+      <p class="section-intro-enhanced">We leverage modern technologies while ensuring our solutions are appropriate for the infrastructure realities of our clients.</p>
+      
+      <div class="tech-grid-enhanced">
+        <div class="tech-category-enhanced">
+          <div class="tech-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>Frontend</h3>
+          <ul class="tech-list">
+            <li><span class="tech-name">React & React Native</span></li>
+            <li><span class="tech-name">Angular</span></li>
+            <li><span class="tech-name">Vue.js</span></li>
+            <li><span class="tech-name">Progressive Web Apps</span></li>
+            <li><span class="tech-name">Offline-first architecture</span></li>
+            <li><span class="tech-name">Low-bandwidth optimizations</span></li>
+          </ul>
+        </div>
+        
+        <div class="tech-category-enhanced">
+          <div class="tech-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3>Backend</h3>
+          <ul class="tech-list">
+            <li><span class="tech-name">Python/Django</span></li>
+            <li><span class="tech-name">Node.js</span></li>
+            <li><span class="tech-name">PHP/Laravel</span></li>
+            <li><span class="tech-name">Java/Spring</span></li>
+            <li><span class="tech-name">.NET Core</span></li>
+            <li><span class="tech-name">Serverless architectures</span></li>
+          </ul>
+        </div>
+        
+        <div class="tech-category-enhanced">
+          <div class="tech-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Mobile</h3>
+          <ul class="tech-list">
+            <li><span class="tech-name">React Native</span></li>
+            <li><span class="tech-name">Flutter</span></li>
+            <li><span class="tech-name">Swift (iOS)</span></li>
+            <li><span class="tech-name">Kotlin (Android)</span></li>
+            <li><span class="tech-name">USSD integration</span></li>
+            <li><span class="tech-name">SMS functionality</span></li>
+          </ul>
+        </div>
+        
+        <div class="tech-category-enhanced">
+          <div class="tech-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3>Database & Cloud</h3>
+          <ul class="tech-list">
+            <li><span class="tech-name">MySQL/PostgreSQL</span></li>
+            <li><span class="tech-name">MongoDB</span></li>
+            <li><span class="tech-name">AWS (African regions)</span></li>
+            <li><span class="tech-name">Google Cloud</span></li>
+            <li><span class="tech-name">Microsoft Azure</span></li>
+            <li><span class="tech-name">Edge computing solutions</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study Section with Creative Layout -->
+  <section class="case-study-enhanced reveal-on-scroll">
+    <div class="container">
+      <h2 class="section-title-enhanced">Success Story: Agricultural Supply Chain Solution</h2>
+      
+      <div class="case-study-content-enhanced">
+        <div class="case-study-text-enhanced">
+          <div class="case-study-header">
+            <div class="case-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3>Transforming Operations for Kitui Farmers Cooperative</h3>
+          </div>
+          
+          <p>We developed a custom inventory and supply chain management system for a cooperative of <span class="highlight-text">1,200 small-scale farmers</span> in Kitui County. The solution includes:</p>
+          
+          <div class="results-container">
+            <div class="results-header">
+              <i class="fas fa-check-circle"></i>
+              <h4>Key Features</h4>
+            </div>
+            <ul class="case-study-results-enhanced">
+              <li>Mobile app with offline capabilities for field agents to record crop data</li>
+              <li>SMS-based price alerts and payment notifications for farmers without smartphones</li>
+              <li>Web dashboard for cooperative management to track inventory and plan logistics</li>
+              <li>Integration with M-Pesa for seamless mobile payments to farmers</li>
+            </ul>
+          </div>
+          
+          <div class="stats-container">
+            <div class="stat-item">
+              <div class="stat-value">35<span>%</span></div>
+              <div class="stat-label">Reduction in post-harvest losses</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">28<span>%</span></div>
+              <div class="stat-label">Increase in farmer payments</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">40<span>%</span></div>
+              <div class="stat-label">Reduction in administrative overhead</div>
+            </div>
+          </div>
+          
+          <div class="testimonial-enhanced">
+            <div class="quote-marks"><i class="fas fa-quote-left"></i></div>
+            <blockquote>
+              This system has revolutionized how we operate. Before, we were using paper records and losing track of inventory. Now everything is digitized, our farmers get paid faster, and we can plan our operations with real data. The fact that it works even without internet in some areas makes it perfect for our needs.
+            </blockquote>
+            <div class="testimonial-author-enhanced">
+              <div class="author-image">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="author-details">
+                <p class="author-name">Catherine Mwangi</p>
+                <p class="author-title">Operations Manager, Kitui Farmers Cooperative</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- IMAGE PLACEHOLDER with animation -->
+        <div class="case-study-image-enhanced">
+          <div class="image-placeholder-enhanced">
+            <div class="image-icon-animated">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <div class="image-caption">
+              <p>A field agent using our mobile application to record crop data from a small-scale farmer in Kitui County, with offline synchronization capabilities.</p>
+            </div>
+          </div>
+          
+          <div class="image-decoration">
+            <div class="decoration-circle"></div>
+            <div class="decoration-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services Section with Animated Cards -->
+  <section class="related-services-enhanced reveal-on-scroll">
+    <div class="section-waves-bottom">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#ffa500" fill-opacity="0.2" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,224C672,213,768,171,864,149.3C960,128,1056,128,1152,149.3C1248,171,1344,213,1392,234.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+    
+    <div class="container">
+      <h2 class="section-title-enhanced">Related Services</h2>
+      <div class="related-services-grid-enhanced">
+        <div class="related-service-card-enhanced">
+          <div class="card-icon-animated">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>IT Support</h3>
+          <p>Comprehensive technical support for your software and systems.</p>
+          <a href="{% url 'it_support' %}" class="btn-learn-more-enhanced">
+            <span>Learn More</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        
+        <div class="related-service-card-enhanced">
+          <div class="card-icon-animated">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>Web & AI Training</h3>
+          <p>Training programs to help your team make the most of your software.</p>
+          <a href="{% url 'web_ai' %}" class="btn-learn-more-enhanced">
+            <span>Learn More</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="cta-section-enhanced reveal-on-scroll">
+    <div class="container">
+      <div class="cta-content-enhanced">
+        <h2>Ready to Build Your Custom Software Solution?</h2>
+        <p>Let's create a tailored solution that addresses your unique business challenges and opportunities.</p>
+        <a href="{% url 'contact' %}" class="cta-btn-large">
+          <span>Start Your Project Today</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="{% static 'images/logo.png' %}" alt="Cyber Host Logo" class="footer-logo-img">
+          <p>Empowering Connections, Anywhere</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'mission' %}">Our Mission</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-services">
+          <h3>Our Services</h3>
+          <ul>
+            <li><a href="{% url 'internet' %}">Rural Internet</a></li>
+            <li><a href="{% url 'it_support' %}">IT Support</a></li>
+            <li><a href="{% url 'software' %}">Software Development</a></li>
+            <li><a href="{% url 'web_ai' %}">Web & AI Training</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:support@cyberhost-africa.com" class="email-link">support@cyberhost-africa.com</a></li>
+            <li><i class="fas fa-phone"></i> <a href="tel:+254718011566" class="phone-link">+254718011566</a></li>
+            <li><i class="fas fa-map-marker-alt"></i> Nairobi / Kenya</li>
+          </ul>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Cyber Host Technologies. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/service-pages.js' %}"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Code animation background
+      const codeLines = document.querySelectorAll('.code-line');
+      
+      function animateCodeLines() {
+        codeLines.forEach(line => {
+          line.classList.add('animate');
+        });
+        
+        setTimeout(() => {
+          codeLines.forEach(line => {
+            line.classList.remove('animate');
+          });
+          setTimeout(animateCodeLines, 1000);
+        }, 15000);
+      }
+      
+      animateCodeLines();
+      
+      // Reveal elements on scroll
+      const revealElements = document.querySelectorAll('.reveal-on-scroll');
+      
+      function checkReveal() {
+        for (let i = 0; i < revealElements.length; i++) {
+          const windowHeight = window.innerHeight;
+          const elementTop = revealElements[i].getBoundingClientRect().top;
+          const elementVisible = 150;
+          
+          if (elementTop < windowHeight - elementVisible) {
+            revealElements[i].classList.add('active');
+          }
+        }
+      }
+      
+      window.addEventListener('scroll', checkReveal);
+      checkReveal(); // Check on load
+    });
+  </script>
+</body>
+</html>

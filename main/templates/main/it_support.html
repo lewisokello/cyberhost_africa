@@ -1,0 +1,590 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT & Technical Support - Cyber Host Technologies</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/service-pages.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body class="page-service-detail">
+  <!-- Particle Background -->
+  <div id="particles-js" class="particles-container"></div>
+  
+  <!-- Background image with gradient overlay -->
+  <div class="background"></div>
+  <div class="gradient-overlay"></div>
+  
+  <!-- Header container for fixed elements -->
+  <div class="header-container">
+    <!-- Fixed Logo -->
+    <div class="logo-wrapper">
+      <a href="{% url 'home' %}">
+        <img src="{% static 'images/logo.png' %}" alt="Cyber Host Logo" class="fixed-logo" />
+      </a>
+      <span class="tooltip">Cyber Host</span>
+    </div>
+
+    <!-- Top Right Navigation -->
+    <div class="nav-wrapper">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>  
+      <nav class="top-nav" id="main-nav">
+        <a href="{% url 'home' %}" class="top-link">Home</a>
+        <a href="{% url 'mission' %}" class="top-link">Our Mission</a>
+        <a href="{% url 'services' %}" class="top-link active">Services</a>
+        <a href="{% url 'about' %}" class="top-link">About Us</a>
+        <a href="{% url 'contact' %}" class="top-link">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Animated Page Header -->
+  <div class="page-header animate__animated animate__fadeIn">
+    <div class="container">
+      <div class="header-content">
+        <div class="service-icon-large animate__animated animate__bounceIn animate__delay-1s">
+          <i class="fas fa-headset"></i>
+        </div>
+        <h1 class="animate__animated animate__fadeInUp animate__delay-1s">IT & Technical Support</h1>
+        <div class="header-line animate__animated animate__fadeInLeft animate__delay-1s"></div>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">Comprehensive technology support tailored for African environments</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Detail Section with Floating Elements -->
+  <section class="service-detail-enhanced">
+    <div class="floating-tech-elements">
+      <div class="tech-element" style="--delay: 0s;"><i class="fas fa-server"></i></div>
+      <div class="tech-element" style="--delay: 2s;"><i class="fas fa-database"></i></div>
+      <div class="tech-element" style="--delay: 4s;"><i class="fas fa-network-wired"></i></div>
+      <div class="tech-element" style="--delay: 6s;"><i class="fas fa-laptop-code"></i></div>
+      <div class="tech-element" style="--delay: 8s;"><i class="fas fa-wifi"></i></div>
+    </div>
+    
+    <div class="container">
+      <div class="service-content reveal-on-scroll">
+        <h2 class="gradient-text">End-to-End IT Support Solutions</h2>
+        <p class="enhanced-text">We provide comprehensive IT support and infrastructure services designed specifically for the unique challenges of African environments. From remote troubleshooting to on-site technical assistance, our team of certified technicians ensures your technology works reliably, even in the most challenging conditions.</p>
+        
+        <div class="service-features-enhanced">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h4>24/7 Remote Support</h4>
+            <p>Round-the-clock technical assistance via phone, email, and chat, with support available in multiple languages including English and Swahili.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h4>On-Site Technical Services</h4>
+            <p>Scheduled maintenance and emergency on-site support across Kenya, with rapid response times even in remote areas.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <h4>Network Infrastructure</h4>
+            <p>Design, installation, and maintenance of reliable network infrastructure optimized for inconsistent power and connectivity conditions.</p>
+          </div>
+        </div>
+        
+        <a href="{% url 'contact' %}" class="cta-btn-enhanced">
+          <span>Get Support Today</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      
+      <!-- IMAGE PLACEHOLDER with animation -->
+      <div class="service-image reveal-on-scroll">
+        <div class="image-placeholder-enhanced">
+          <div class="image-icon-animated">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <p>Our technician providing on-site support at a rural school, setting up a resilient local network that works even during internet outages.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support Plans Section with Hover Effects -->
+  <section class="support-plans-enhanced reveal-on-scroll">
+    <div class="section-waves">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#ffa500" fill-opacity="0.2" d="M0,192L48,176C96,160,192,128,288,122.7C384,117,480,139,576,165.3C672,192,768,224,864,213.3C960,203,1056,149,1152,138.7C1248,128,1344,160,1392,176L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+      </svg>
+    </div>
+    
+    <div class="container">
+      <h2 class="section-title-enhanced">Our Support Plans</h2>
+      <p class="section-intro-enhanced">We offer flexible support packages designed to meet the needs of different organizations, from small businesses to large enterprises and educational institutions.</p>
+      
+      <div class="plans-grid-enhanced">
+        <div class="plan-card-enhanced">
+          <div class="plan-header-enhanced">
+            <div class="plan-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Basic Support</h3>
+            <p class="plan-price">Starting at KSh 15,000/month</p>
+          </div>
+          <ul class="plan-features-enhanced">
+            <li><i class="fas fa-check"></i> Business hours remote support (8am-6pm, Mon-Fri)</li>
+            <li><i class="fas fa-check"></i> Monthly preventative maintenance</li>
+            <li><i class="fas fa-check"></i> Network monitoring</li>
+            <li><i class="fas fa-check"></i> Security updates and patches</li>
+            <li><i class="fas fa-check"></i> 48-hour response time for on-site support</li>
+          </ul>
+          <div class="plan-footer">
+            <p class="plan-ideal">Ideal for: Small businesses and organizations with basic IT needs</p>
+            <a href="{% url 'contact' %}" class="plan-button">Select Plan</a>
+          </div>
+        </div>
+        
+        <div class="plan-card-enhanced featured">
+          <div class="plan-badge">Most Popular</div>
+          <div class="plan-header-enhanced">
+            <div class="plan-icon">
+              <i class="fas fa-crown"></i>
+            </div>
+            <h3>Professional Support</h3>
+            <p class="plan-price">Starting at KSh 35,000/month</p>
+          </div>
+          <ul class="plan-features-enhanced">
+            <li><i class="fas fa-check"></i> 24/7 remote support</li>
+            <li><i class="fas fa-check"></i> Bi-weekly preventative maintenance</li>
+            <li><i class="fas fa-check"></i> Advanced network monitoring and management</li>
+            <li><i class="fas fa-check"></i> Proactive security management</li>
+            <li><i class="fas fa-check"></i> 24-hour response time for on-site support</li>
+            <li><i class="fas fa-check"></i> Backup and disaster recovery solutions</li>
+            <li><i class="fas fa-check"></i> Quarterly IT strategy consultations</li>
+          </ul>
+          <div class="plan-footer">
+            <p class="plan-ideal">Ideal for: Medium-sized businesses and schools with moderate IT complexity</p>
+            <a href="{% url 'contact' %}" class="plan-button">Select Plan</a>
+          </div>
+        </div>
+        
+        <div class="plan-card-enhanced">
+          <div class="plan-header-enhanced">
+            <div class="plan-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3>Enterprise Support</h3>
+            <p class="plan-price">Custom pricing</p>
+          </div>
+          <ul class="plan-features-enhanced">
+            <li><i class="fas fa-check"></i> 24/7 priority remote support</li>
+            <li><i class="fas fa-check"></i> Weekly preventative maintenance</li>
+            <li><i class="fas fa-check"></i> Comprehensive infrastructure management</li>
+            <li><i class="fas fa-check"></i> Advanced security operations center</li>
+            <li><i class="fas fa-check"></i> 4-hour response time for on-site support</li>
+            <li><i class="fas fa-check"></i> Enterprise backup and business continuity</li>
+            <li><i class="fas fa-check"></i> Dedicated account manager</li>
+            <li><i class="fas fa-check"></i> Monthly IT strategy and planning</li>
+          </ul>
+          <div class="plan-footer">
+            <p class="plan-ideal">Ideal for: Large organizations, educational networks, and enterprises with complex IT needs</p>
+            <a href="{% url 'contact' %}" class="plan-button">Select Plan</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="plans-note-enhanced">
+        <p>All plans can be customized to meet your specific requirements. We also offer pay-as-you-go options for organizations with limited budgets.</p>
+        <a href="{% url 'contact' %}" class="btn-learn-more-enhanced">Contact Us for Custom Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study Section with Creative Layout -->
+  <section class="case-study-enhanced reveal-on-scroll">
+    <div class="container">
+      <h2 class="section-title-enhanced">Success Story: Healthcare IT Transformation</h2>
+      
+      <div class="case-study-content-enhanced">
+        <div class="case-study-text-enhanced">
+          <div class="case-study-header">
+            <div class="case-icon">
+              <i class="fas fa-hospital"></i>
+            </div>
+            <h3>Kitui County Health Network</h3>
+          </div>
+          
+          <p>We implemented a comprehensive IT support solution for a network of 12 rural health clinics in Kitui County, addressing their unique challenges:</p>
+          
+          <div class="results-container">
+            <div class="results-header">
+              <i class="fas fa-chart-line"></i>
+              <h4>Key Implementations</h4>
+            </div>
+            <ul class="case-study-results-enhanced">
+              <li>Deployed solar-powered backup systems to ensure critical medical systems remain operational during power outages</li>
+              <li>Implemented a resilient medical records system with offline capabilities, ensuring patient data is always accessible</li>
+              <li>Established a secure telemedicine network connecting rural clinics to specialists in Nairobi</li>
+              <li>Trained local staff on basic IT maintenance and troubleshooting</li>
+            </ul>
+          </div>
+          
+          <div class="stats-container">
+            <div class="stat-item">
+              <div class="stat-value">45<span>%</span></div>
+              <div class="stat-label">Reduction in patient wait times</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">78<span>%</span></div>
+              <div class="stat-label">Decrease in medical record errors</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">99.8<span>%</span></div>
+              <div class="stat-label">Uptime for critical systems</div>
+            </div>
+          </div>
+          
+          <div class="testimonial-enhanced">
+            <div class="quote-marks"><i class="fas fa-quote-left"></i></div>
+            <blockquote>
+              Cyber Host's IT support has transformed how we deliver healthcare. Their understanding of our unique challenges and their innovative solutions have made technology work for us, not against us. Even during power outages and connectivity issues, our systems remain operational, allowing us to focus on patient care.
+            </blockquote>
+            <div class="testimonial-author-enhanced">
+              <div class="author-image">
+                <i class="fas fa-user-md"></i>
+              </div>
+              <div class="author-details">
+                <p class="author-name">Dr. Elizabeth Muthoni</p>
+                <p class="author-title">Director, Kitui County Health Network</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- IMAGE PLACEHOLDER with animation -->
+        <div class="case-study-image-enhanced">
+          <div class="image-placeholder-enhanced">
+            <div class="image-icon-animated">
+              <i class="fas fa-hospital"></i>
+            </div>
+            <div class="image-caption">
+              <p>A nurse at Kitui Rural Health Clinic accessing patient records on a system designed to work offline during connectivity interruptions.</p>
+            </div>
+          </div>
+          
+          <div class="image-decoration">
+            <div class="decoration-circle"></div>
+            <div class="decoration-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialized Services Section with Interactive Cards -->
+  <section class="specialized-services-enhanced reveal-on-scroll">
+    <div class="section-waves-bottom">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#ffa500" fill-opacity="0.2" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,224C672,213,768,171,864,149.3C960,128,1056,128,1152,149.3C1248,171,1344,213,1392,234.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+    
+    <div class="container">
+      <h2 class="section-title-enhanced">Specialized IT Services</h2>
+      <p class="section-intro-enhanced">Our expert team provides specialized services to address your most complex IT challenges</p>
+      
+      <div class="specialized-grid-enhanced">
+        <div class="specialized-card-enhanced">
+          <div class="card-front">
+            <div class="specialized-icon-enhanced">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Cybersecurity</h3>
+            <p class="card-hint">Click to learn more</p>
+          </div>
+          <div class="card-back">
+            <h3>Cybersecurity</h3>
+            <p>Comprehensive security assessments, implementation of security controls, staff training, and ongoing monitoring to protect your organization from cyber threats.</p>
+            <a href="{% url 'contact' %}" class="card-link">Learn More</a>
+          </div>
+        </div>
+        
+        <div class="specialized-card-enhanced">
+          <div class="card-front">
+            <div class="specialized-icon-enhanced">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <h3>Cloud Migration</h3>
+            <p class="card-hint">Click to learn more</p>
+          </div>
+          <div class="card-back">
+            <h3>Cloud Migration</h3>
+            <p>Strategic planning and implementation of cloud solutions optimized for African connectivity conditions, with hybrid approaches that maintain functionality during outages.</p>
+            <a href="{% url 'contact' %}" class="card-link">Learn More</a>
+          </div>
+        </div>
+        
+        <div class="specialized-card-enhanced">
+          <div class="card-front">
+            <div class="specialized-icon-enhanced">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3>Infrastructure Optimization</h3>
+            <p class="card-hint">Click to learn more</p>
+          </div>
+          <div class="card-back">
+            <h3>Infrastructure Optimization</h3>
+            <p>Assessment and improvement of existing IT infrastructure to enhance performance, reliability, and cost-effectiveness in challenging environments.</p>
+            <a href="{% url 'contact' %}" class="card-link">Learn More</a>
+          </div>
+        </div>
+        
+        <div class="specialized-card-enhanced">
+          <div class="card-front">
+            <div class="specialized-icon-enhanced">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <h3>IT Training</h3>
+            <p class="card-hint">Click to learn more</p>
+          </div>
+          <div class="card-back">
+            <h3>IT Training</h3>
+            <p>Customized training programs for your staff to build internal IT capabilities and reduce dependency on external support over time.</p>
+            <a href="{% url 'contact' %}" class="card-link">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services Section with Animated Cards -->
+  <section class="related-services-enhanced reveal-on-scroll">
+    <div class="container">
+      <h2 class="section-title-enhanced">Related Services</h2>
+      <div class="related-services-grid-enhanced">
+        <div class="related-service-card-enhanced">
+          <div class="card-icon-animated">
+            <i class="fas fa-wifi"></i>
+          </div>
+          <h3>Rural Internet</h3>
+          <p>High-speed internet connectivity that works reliably with our IT support services.</p>
+          <a href="{% url 'internet' %}" class="btn-learn-more-enhanced">
+            <span>Learn More</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        
+        <div class="related-service-card-enhanced">
+          <div class="card-icon-animated">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Software Development</h3>
+          <p>Custom software solutions that integrate seamlessly with your IT infrastructure.</p>
+          <a href="{% url 'software' %}" class="btn-learn-more-enhanced">
+            <span>Learn More</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="cta-section-enhanced reveal-on-scroll">
+    <div class="container">
+      <div class="cta-content-enhanced">
+        <h2>Ready to Transform Your IT Infrastructure?</h2>
+        <p>Join hundreds of satisfied clients who have enhanced their technological capabilities with Cyber Host Technologies.</p>
+        <a href="{% url 'contact' %}" class="cta-btn-large">
+          <span>Contact Us Today</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="{% static 'images/logo.png' %}" alt="Cyber Host Logo" class="footer-logo-img">
+          <p>Empowering Connections, Anywhere</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'mission' %}">Our Mission</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-services">
+          <h3>Our Services</h3>
+          <ul>
+            <li><a href="{% url 'internet' %}">Rural Internet</a></li>
+            <li><a href="{% url 'it_support' %}">IT Support</a></li>
+            <li><a href="{% url 'software' %}">Software Development</a></li>
+            <li><a href="{% url 'web_ai' %}">Web & AI Training</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:support@cyberhost-africa.com" class="email-link">support@cyberhost-africa.com</a></li>
+            <li><i class="fas fa-phone"></i> <a href="tel:+254718011566" class="phone-link">+254718011566</a></li>
+            <li><i class="fas fa-map-marker-alt"></i> Nairobi / Kitui County</li>
+          </ul>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Cyber Host Technologies. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Particle.js for background effects -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/service-pages.js' %}"></script>
+  
+  <script>
+    // Initialize particles.js
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof particlesJS !== 'undefined') {
+        particlesJS('particles-js', {
+          "particles": {
+            "number": {
+              "value": 50,
+              "density": {
+                "enable": true,
+                "value_area": 800
+              }
+            },
+            "color": {
+              "value": "#ffa500"
+            },
+            "shape": {
+              "type": "circle",
+              "stroke": {
+                "width": 0,
+                "color": "#000000"
+              },
+            },
+            "opacity": {
+              "value": 0.5,
+              "random": true,
+              "anim": {
+                "enable": true,
+                "speed": 1,
+                "opacity_min": 0.1,
+                "sync": false
+              }
+            },
+            "size": {
+              "value": 3,
+              "random": true,
+              "anim": {
+                "enable": true,
+                "speed": 2,
+                "size_min": 0.1,
+                "sync": false
+              }
+            },
+            "line_linked": {
+              "enable": true,
+              "distance": 150,
+              "color": "#ffa500",
+              "opacity": 0.4,
+              "width": 1
+            },
+            "move": {
+              "enable": true,
+              "speed": 1,
+              "direction": "none",
+              "random": true,
+              "straight": false,
+              "out_mode": "out",
+              "bounce": false,
+            }
+          },
+          "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+              "onhover": {
+                "enable": true,
+                "mode": "grab"
+              },
+              "onclick": {
+                "enable": true,
+                "mode": "push"
+              },
+              "resize": true
+            },
+            "modes": {
+              "grab": {
+                "distance": 140,
+                "line_linked": {
+                  "opacity": 1
+                }
+              },
+              "push": {
+                "particles_nb": 4
+              }
+            }
+          },
+          "retina_detect": true
+        });
+      }
+      
+      // Flip cards on click
+      const cards = document.querySelectorAll('.specialized-card-enhanced');
+      cards.forEach(card => {
+        card.addEventListener('click', function() {
+          this.classList.toggle('flipped');
+        });
+      });
+      
+      // Reveal elements on scroll
+      const revealElements = document.querySelectorAll('.reveal-on-scroll');
+      
+      function checkReveal() {
+        for (let i = 0; i < revealElements.length; i++) {
+          const windowHeight = window.innerHeight;
+          const elementTop = revealElements[i].getBoundingClientRect().top;
+          const elementVisible = 150;
+          
+          if (elementTop < windowHeight - elementVisible) {
+            revealElements[i].classList.add('active');
+          }
+        }
+      }
+      
+      window.addEventListener('scroll', checkReveal);
+      checkReveal(); // Check on load
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials - Cyber Host Technologies</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="page-testimonials">
+  <!-- Background image with gradient overlay -->
+  <div class="background"></div>
+  <div class="gradient-overlay"></div>
+  
+  <!-- Header container for fixed elements -->
+  <div class="header-container">
+    <!-- Fixed Logo -->
+    <div class="logo-wrapper">
+      <a href="{% url 'home' %}">
+        <img src="{% static 'images/logo.png' %}" alt="Cyber Host Logo" class="fixed-logo" />
+      </a>
+      <span class="tooltip">Cyber Host</span>
+    </div>
+
+    <!-- Top Right Navigation -->
+    <div class="nav-wrapper">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>  
+      <nav class="top-nav" id="main-nav">
+        <a href="{% url 'home' %}" class="top-link">Home</a>
+        <a href="{% url 'mission' %}" class="top-link">Our Mission</a>
+        <a href="{% url 'services' %}" class="top-link">Services</a>
+        <a href="{% url 'about' %}" class="top-link">About Us</a>
+        <a href="{% url 'contact' %}" class="top-link">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>Testimonials</h1>
+      <p>Hear from our clients and communities about the impact of our services</p>
+    </div>
+  </div>
+
+  <!-- Testimonials Introduction -->
+  <section class="testimonials-intro">
+    <div class="container">
+      <h2>Our Impact Stories</h2>
+      <p class="section-intro">At Cyber Host Technologies, we measure our success by the positive change we bring to communities and businesses across Kenya. Here are some stories from the people we've had the privilege to serve.</p>
+    </div>
+  </section>
+
+  <!-- Featured Testimonial -->
+  <section class="featured-testimonial">
+    <div class="container">
+      <div class="testimonial-card featured">
+        <div class="quote-icon">
+          <i class="fas fa-quote-left"></i>
+        </div>
+        <blockquote>
+          "Before Cyber Host installed Starlink at our school, our students had never used the internet. Now they're learning coding and AI through their online platform. It has completely transformed our educational approach and opened up new opportunities for our students."
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="author-image">
+            <!-- IMAGE PLACEHOLDER -->
+            <div class="image-placeholder small" data-alt="Principal Portrait">
+              <i class="fas fa-user"></i>
+            </div>
+          </div>
+          <div class="author-info">
+            <p class="author-name">James Mwangi</p>
+            <p class="author-title">Principal, Kitui County Secondary School</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Grid -->
+  <section class="testimonials-grid-section">
+    <div class="container">
+      <div class="testimonials-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="quote-icon">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <blockquote>
+            "As a small business owner in a rural area, I struggled with unreliable internet that affected my operations. Cyber Host's internet solution has been a game-changer for my business. I can now process online payments, manage inventory, and communicate with suppliers without interruption."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <p class="author-name">Sarah Odhiambo</p>
+              <p class="author-title">Owner, Kitui Crafts Shop</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="quote-icon">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <blockquote>
+            "The IT support team at Cyber Host is exceptional. They're always available when we need them and have helped us implement systems that have streamlined our operations. Their knowledge and professionalism are unmatched."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <p class="author-name">David Kimani</p>
+              <p class="author-title">Operations Manager, Nairobi Logistics</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="quote-icon">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <blockquote>
+            "I took the AI Fundamentals course through Cyber Host's LMS platform. The content was well-structured and easy to follow, even with my limited technical background. I've now started a career in data analysis thanks to the skills I gained."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <p class="author-name">Grace Muthoni</p>
+              <p class="author-title">Data Analyst, Tech Solutions Kenya</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 4 -->
+        <div class="testimonial-card">
+          <div class="quote-icon">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <blockquote>
+            "The custom software Cyber Host developed for our healthcare facility has improved our patient management system tremendously. It's user-friendly, reliable, and perfectly tailored to our specific needs."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <p class="author-name">Dr. John Otieno</p>
+              <p class="author-title">Medical Director, Kitui Health Center</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Impact Section -->
+  <section class="community-impact">
+    <div class="container">
+      <h2>Community Impact</h2>
+      <div class="impact-content">
+        <div class="impact-text">
+          <p>Our services have reached over 50 communities across Kenya, providing internet access to more than 20,000 people who previously had limited or no connectivity. Through our educational programs, we've trained over 5,000 students in various technology skills, helping to bridge the digital divide and create new opportunities.</p>
+          <p>We're proud to be part of Kenya's digital transformation and remain committed to expanding our reach to more underserved areas.</p>
+        </div>
+        
+        <!-- IMAGE PLACEHOLDER -->
+        <div class="impact-image">
+          <div class="image-placeholder" data-alt="Community Impact">
+            <i class="fas fa-users"></i>
+            <p>Community Impact Image</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Share Your Story Section -->
+  <section class="share-story">
+    <div class="container">
+      <h2>Share Your Story</h2>
+      <p>Have you experienced the impact of our services? We'd love to hear your story!</p>
+      <a href="{% url 'contact' %}" class="cta-btn">Share Your Testimonial</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="{% static 'images/logo.png' %}" alt="Cyber Host Logo" class="footer-logo-img">
+          <p>Empowering Connections, Anywhere</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'mission' %}">Our Mission</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-services">
+          <h3>Our Services</h3>
+          <ul>
+            <li><a href="{% url 'internet' %}">Rural Internet</a></li>
+            <li><a href="{% url 'it_support' %}">IT Support</a></li>
+            <li><a href="{% url 'software' %}">Software Development</a></li>
+            <li><a href="{% url 'web_ai' %}">Web & AI Training</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:support@cyberhost-africa.com" class="email-link">support@cyberhost-africa.com</a></li>
+            <li><i class="fas fa-phone"></i> <a href="tel:+254718011566" class="phone-link">+254718011566</a></li>
+            <li><i class="fas fa-map-marker-alt"></i> Nairobi / Kenya</li>
+          </ul>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Cyber Host Technologies. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

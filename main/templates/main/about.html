@@ -1,0 +1,232 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Cyber Host Technologies</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body id="page-about">
+  <!-- Background image with gradient overlay -->
+  
+  
+  <!-- Header container for fixed elements -->
+  <div class="header-container">
+    <!-- Fixed Logo -->
+    <div class="logo-wrapper">
+      <a href="{% url 'home' %}">
+        <img src="{% static 'images/logo.png' %}" alt="Cyber Host Logo" class="fixed-logo" />
+      </a>
+      <span class="tooltip">Cyber Host</span>
+    </div>
+
+    <!-- Top Right Navigation -->
+    <div class="nav-wrapper">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>  
+      <nav class="top-nav" id="main-nav">
+        <a href="{% url 'home' %}" class="top-link">Home</a>
+        <a href="{% url 'mission' %}" class="top-link">Our Mission</a>
+        <a href="{% url 'services' %}" class="top-link">Services</a>
+        <a href="{% url 'about' %}" class="top-link active">About Us</a>
+        <a href="{% url 'contact' %}" class="top-link">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>About Us</h1>
+      <p>Learn about our mission, vision, and the team behind Cyber Host Technologies</p>
+    </div>
+  </div>
+
+  <!-- Our Story Section -->
+  <section class="about-story">
+    <div class="container">
+      <div class="about-content">
+        <h2>Our Story</h2>
+        <p>Cyber Host Technologies started with a simple but powerful vision: to bridge the digital divide in Kenya. Founded by Lewis Okello, a passionate tech innovator, we focus on providing affordable internet, software solutions, and tech education to underserved communities and forward-looking organizations.</p>
+        <p>What began as a small initiative to connect rural schools has grown into a comprehensive technology company serving communities, businesses, and institutions across Kenya.</p>
+      </div>
+      <!-- IMAGE PLACEHOLDER -->
+      <div class="about-image">
+        <!-- Add founder image here -->
+        <div class="image-placeholder" data-alt="Founder Image">
+          <i class="fas fa-user"></i>
+          <p>Founder Image</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values Section -->
+  <section class="values-section">
+    <div class="container">
+      <h2>Our Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-universal-access"></i>
+          </div>
+          <h3>Accessibility</h3>
+          <p>Everyone deserves internet access, regardless of location or economic status.</p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3>Innovation</h3>
+          <p>We build what our communities and clients need, adapting technology to local contexts.</p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-fist-raised"></i>
+          </div>
+          <h3>Empowerment</h3>
+          <p>Knowledge is power, and we teach it through our training programs and LMS platform.</p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Integrity</h3>
+          <p>We deliver real results, no shortcuts. Our reputation is built on trust and reliability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision & Mission Section -->
+  <section class="vision-mission">
+    <div class="container">
+      <div class="vision-box">
+        <h2>Our Vision</h2>
+        <p>A connected Kenya where rural and urban communities have equal access to digital tools and opportunities.</p>
+      </div>
+      
+      <div class="mission-box">
+        <h2>Our Mission</h2>
+        <p>To provide smart, scalable internet, software, and training services that uplift lives and drive sustainable development.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section (Placeholder) -->
+  <section class="team-section">
+    <div class="container">
+      <h2>Our Team</h2>
+      <p class="section-intro">Meet the passionate individuals working to bridge the digital divide in Kenya.</p>
+      
+      <div class="team-grid">
+        <!-- IMAGE PLACEHOLDER -->
+        <div class="team-member">
+          <div class="image-placeholder" data-alt="Team Member 1">
+            <i class="fas fa-user"></i>
+          </div>
+          <h3>Lewis Okello</h3>
+          <p class="member-role">Founder & CEO</p>
+        </div>
+        
+        <!-- Add more team members as needed -->
+        <div class="team-member">
+          <div class="image-placeholder" data-alt="Team Member 2">
+            <i class="fas fa-user"></i>
+          </div>
+          <h3>Team Member</h3>
+          <p class="member-role">Technical Director</p>
+        </div>
+        
+        <div class="team-member">
+          <div class="image-placeholder" data-alt="Team Member 3">
+            <i class="fas fa-user"></i>
+          </div>
+          <h3>Team Member</h3>
+          <p class="member-role">Operations Manager</p>
+        </div>
+        
+        <div class="team-member">
+          <div class="image-placeholder" data-alt="Team Member 4">
+            <i class="fas fa-user"></i>
+          </div>
+          <h3>Team Member</h3>
+          <p class="member-role">Lead Developer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA Section -->
+  <section class="contact-cta">
+    <div class="container">
+      <h2>Join Our Mission</h2>
+      <p>Want to partner with us or learn more about our work?</p>
+      <a href="{% url 'contact' %}" class="cta-btn">Get In Touch</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="{% static 'images/logo.png' %}" alt="Cyber Host Logo" class="footer-logo-img">
+          <p>Empowering Connections, Anywhere</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'mission' %}">Our Mission</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-services">
+          <h3>Our Services</h3>
+          <ul>
+            <li><a href="{% url 'internet' %}">Rural Internet</a></li>
+            <li><a href="{% url 'it_support' %}">IT Support</a></li>
+            <li><a href="{% url 'software' %}">Software Development</a></li>
+            <li><a href="{% url 'web_ai' %}">Web & AI Training</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:support@cyberhost-africa.com" class="email-link">support@cyberhost-africa.com</a></li>
+            <li><i class="fas fa-phone"></i> <a href="tel:+254718011566" class="phone-link">+254718011566</a></li>
+            <li><i class="fas fa-map-marker-alt"></i> Nairobi / Kenya</li>
+          </ul>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Cyber Host Technologies. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

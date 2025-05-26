@@ -1,0 +1,654 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Services & AI Training - Cyber Host Technologies</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/service-pages.css' %}">
+  <link rel="stylesheet" href="{% static 'css/content-fixes.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body class="page-service-detail">
+  <!-- Neural Network Animation Background -->
+  <div class="neural-network-bg">
+    <div class="neural-node" style="--x: 20%; --y: 30%; --delay: 0s;"></div>
+    <div class="neural-node" style="--x: 80%; --y: 20%; --delay: 1s;"></div>
+    <div class="neural-node" style="--x: 40%; --y: 70%; --delay: 2s;"></div>
+    <div class="neural-node" style="--x: 70%; --y: 60%; --delay: 3s;"></div>
+    <div class="neural-node" style="--x: 30%; --y: 50%; --delay: 4s;"></div>
+    <div class="neural-node" style="--x: 60%; --y: 40%; --delay: 5s;"></div>
+    <div class="neural-node" style="--x: 50%; --y: 80%; --delay: 6s;"></div>
+    <div class="neural-node" style="--x: 90%; --y: 70%; --delay: 7s;"></div>
+    <div class="neural-node" style="--x: 10%; --y: 60%; --delay: 8s;"></div>
+  </div>
+  
+  <!-- Background image with gradient overlay -->
+  <div class="background"></div>
+  <div class="gradient-overlay"></div>
+  
+  <!-- Header container for fixed elements -->
+  <div class="header-container">
+    <!-- Fixed Logo -->
+    <div class="logo-wrapper">
+      <a href="{% url 'home' %}">
+        <img src="{% static 'images/logo.png' %}" alt="Cyber Host Logo" class="fixed-logo" />
+      </a>
+      <span class="tooltip">Cyber Host</span>
+    </div>
+
+    <!-- Top Right Navigation -->
+    <div class="nav-wrapper">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>  
+      <nav class="top-nav" id="main-nav">
+        <a href="{% url 'home' %}" class="top-link">Home</a>
+        <a href="{% url 'mission' %}" class="top-link">Our Mission</a>
+        <a href="{% url 'services' %}" class="top-link active">Services</a>
+        <a href="{% url 'about' %}" class="top-link">About Us</a>
+        <a href="{% url 'contact' %}" class="top-link">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Animated Page Header -->
+  <div class="page-header animate__animated animate__fadeIn">
+    <div class="container">
+      <div class="header-content">
+        <div class="service-icon-large animate__animated animate__bounceIn animate__delay-1s">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h1 class="animate__animated animate__fadeInUp animate__delay-1s">Web Services & AI Training</h1>
+        <div class="header-line animate__animated animate__fadeInLeft animate__delay-1s"></div>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">Professional web solutions and cutting-edge AI education</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Detail Section with Interactive Elements -->
+  <section class="service-detail-enhanced">
+    <div class="floating-tech-elements">
+      <div class="tech-element" style="--delay: 0s;"><i class="fas fa-brain"></i></div>
+      <div class="tech-element" style="--delay: 2s;"><i class="fas fa-globe"></i></div>
+      <div class="tech-element" style="--delay: 4s;"><i class="fas fa-robot"></i></div>
+      <div class="tech-element" style="--delay: 6s;"><i class="fas fa-code"></i></div>
+      <div class="tech-element" style="--delay: 8s;"><i class="fas fa-graduation-cap"></i></div>
+    </div>
+    
+    <div class="container">
+      <!-- IMAGE PLACEHOLDER with animation -->
+      <div class="service-image reveal-on-scroll">
+        <div class="image-placeholder-enhanced">
+          <div class="image-icon-animated">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <p>Students at a rural school in Kitui County using our AI learning platform on tablets connected to our Starlink internet service.</p>
+        </div>
+      </div>
+      
+      <div class="service-content reveal-on-scroll">
+        <h2 class="gradient-text">Web Services & AI Training for Africa's Future</h2>
+        <p class="enhanced-text">We offer <span class="highlight-text">professional website design</span>, hosting, and web applications built specifically for African businesses and organizations. Our <span class="highlight-text">SaaS-based Learning Management System (LMS)</span> teaches AI, coding, and computer literacy to youth and professionals across Kenya, with content specifically designed for the <span class="highlight-text">African context and job market</span>.</p>
+      
+        <div class="service-features-enhanced">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h4>Website Development</h4>
+            <p>Professional, responsive websites for businesses, organizations, and individuals, optimized for low-bandwidth environments and local hosting options for faster access.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-server"></i>
+            </div>
+            <h4>Web Hosting</h4>
+            <p>Reliable, secure hosting solutions with excellent uptime and performance, including local caching options and content delivery networks optimized for African internet infrastructure.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h4>AI & Coding Training</h4>
+            <p>Comprehensive courses on AI, machine learning, and programming fundamentals, with curriculum designed to address African challenges and opportunities in technology.</p>
+          </div>
+        </div>
+      
+        <a href="{% url 'contact' %}" class="cta-btn-enhanced">
+          <span>Get Started Today</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LMS Platform Section with Interactive Features -->
+  <section class="lms-platform-enhanced reveal-on-scroll">
+    <div class="section-waves">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#ffa500" fill-opacity="0.2" d="M0,192L48,176C96,160,192,128,288,122.7C384,117,480,139,576,165.3C672,192,768,224,864,213.3C960,203,1056,149,1152,138.7C1248,128,1344,160,1392,176L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+      </svg>
+    </div>
+    
+    <div class="container">
+      <h2 class="section-title-enhanced">Our Learning Management System: <span class="highlight-text-large">AfriLearn</span></h2>
+      
+      <div class="lms-content-enhanced">
+        <div class="lms-description-enhanced">
+          <p class="lms-intro">Our innovative Learning Management System, <span class="highlight-text">AfriLearn</span>, is designed specifically for the African context, with features that make it accessible even in areas with limited connectivity:</p>
+        
+          <div class="lms-features-grid">
+            <div class="lms-feature">
+              <div class="feature-icon">
+                <i class="fas fa-wifi-slash"></i>
+              </div>
+              <div class="feature-content">
+                <h4>Offline Capabilities</h4>
+                <p>Students can download content and continue learning without an internet connection, with progress automatically syncing when connectivity returns.</p>
+              </div>
+            </div>
+            
+            <div class="lms-feature">
+              <div class="feature-icon">
+                <i class="fas fa-tachometer-alt"></i>
+              </div>
+              <div class="feature-content">
+                <h4>Low-Bandwidth Optimization</h4>
+                <p>Our platform works efficiently even on slow connections, with adaptive content delivery that adjusts to available bandwidth.</p>
+              </div>
+            </div>
+            
+            <div class="lms-feature">
+              <div class="feature-icon">
+                <i class="fas fa-language"></i>
+              </div>
+              <div class="feature-content">
+                <h4>Multilingual Support</h4>
+                <p>Content available in multiple languages including Swahili, Kikuyu, and other local languages to ensure accessibility for all learners.</p>
+              </div>
+            </div>
+            
+            <div class="lms-feature">
+              <div class="feature-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="feature-content">
+                <h4>Community Learning</h4>
+                <p>Collaborative features that encourage peer-to-peer learning, including discussion forums, group projects, and mentorship connections.</p>
+              </div>
+            </div>
+            
+            <div class="lms-feature">
+              <div class="feature-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <div class="feature-content">
+                <h4>Mobile-First Design</h4>
+                <p>Optimized for smartphones, which are often the primary computing device in Africa, with responsive design that works on any screen size.</p>
+              </div>
+            </div>
+            
+            <div class="lms-feature">
+              <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="feature-content">
+                <h4>Progress Tracking</h4>
+                <p>Comprehensive analytics for students, teachers, and administrators to track learning outcomes and identify areas for improvement.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- IMAGE PLACEHOLDER with animation -->
+        <div class="lms-image-enhanced">
+          <div class="image-placeholder-enhanced">
+            <div class="image-icon-animated">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="image-caption">
+              <p>Screenshot of our AfriLearn platform showing the AI Fundamentals course dashboard with interactive exercises and offline download options.</p>
+            </div>
+          </div>
+          
+          <div class="image-decoration">
+            <div class="decoration-circle"></div>
+            <div class="decoration-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section with Interactive Cards -->
+  <section class="courses-section-enhanced reveal-on-scroll">
+    <div class="container">
+      <h2 class="section-title-enhanced">Featured Courses</h2>
+      <p class="section-intro-enhanced">Our curriculum is designed to address both global technology trends and specific African market needs, creating pathways to employment and entrepreneurship.</p>
+      
+      <div class="courses-grid-enhanced">
+        <div class="course-card-enhanced">
+          <div class="course-header">
+            <div class="course-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Introduction to Programming</h3>
+          </div>
+          
+          <div class="course-content">
+            <p>Learn the fundamentals of programming with Python, a versatile and beginner-friendly language. Build practical applications relevant to African business contexts.</p>
+          
+          <div class="course-details-enhanced">
+            <div class="course-detail">
+              <i class="fas fa-clock"></i>
+              <span>8 weeks</span>
+            </div>
+            <div class="course-detail">
+              <i class="fas fa-signal"></i>
+              <span>Beginner</span>
+            </div>
+            <div class="course-detail">
+              <i class="fas fa-certificate"></i>
+              <span>Certificate</span>
+            </div>
+          </div>
+          
+          <div class="course-stats">
+            <div class="course-stat">
+              <div class="stat-number">1,200<span>+</span></div>
+              <div class="stat-label">Graduates</div>
+            </div>
+            <div class="course-stat">
+              <div class="stat-number">70<span>%</span></div>
+              <div class="stat-label">Employment Rate</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="course-footer">
+          <a href="{% url 'contact' %}" class="course-button">Enroll Now</a>
+        </div>
+      </div>
+      
+      <div class="course-card-enhanced featured">
+        <div class="course-badge">Most Popular</div>
+        <div class="course-header">
+          <div class="course-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3>AI Fundamentals</h3>
+        </div>
+        
+        <div class="course-content">
+          <p>Understand the basics of artificial intelligence, machine learning, and their applications in solving African challenges in agriculture, healthcare, and finance.</p>
+          
+          <div class="course-details-enhanced">
+            <div class="course-detail">
+              <i class="fas fa-clock"></i>
+              <span>10 weeks</span>
+            </div>
+            <div class="course-detail">
+              <i class="fas fa-signal"></i>
+              <span>Intermediate</span>
+            </div>
+            <div class="course-detail">
+              <i class="fas fa-certificate"></i>
+              <span>Certificate</span>
+            </div>
+          </div>
+          
+          <div class="course-stats">
+            <div class="course-stat">
+              <div class="stat-number">850<span>+</span></div>
+              <div class="stat-label">Graduates</div>
+            </div>
+            <div class="course-stat">
+              <div class="stat-number">65<span>%</span></div>
+              <div class="stat-label">Employment Rate</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="course-footer">
+          <a href="{% url 'contact' %}" class="course-button">Enroll Now</a>
+        </div>
+      </div>
+      
+      <div class="course-card-enhanced">
+        <div class="course-header">
+          <div class="course-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3>Web Development</h3>
+        </div>
+        
+        <div class="course-content">
+          <p>Build responsive websites using HTML, CSS, and JavaScript, the core technologies of the web. Learn to create mobile-friendly sites optimized for African internet conditions.</p>
+          
+          <div class="course-details-enhanced">
+            <div class="course-detail">
+              <i class="fas fa-clock"></i>
+              <span>12 weeks</span>
+            </div>
+            <div class="course-detail">
+              <i class="fas fa-signal"></i>
+              <span>Beginner-Intermediate</span>
+            </div>
+            <div class="course-detail">
+              <i class="fas fa-certificate"></i>
+              <span>Certificate</span>
+            </div>
+          </div>
+          
+          <div class="course-stats">
+            <div class="course-stat">
+              <div class="stat-number">1,500<span>+</span></div>
+              <div class="stat-label">Graduates</div>
+            </div>
+            <div class="course-stat">
+              <div class="stat-number">75<span>%</span></div>
+              <div class="stat-label">Employment Rate</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="course-footer">
+          <a href="{% url 'contact' %}" class="course-button">Enroll Now</a>
+        </div>
+      </div>
+      
+      <div class="course-card-enhanced">
+        <div class="course-header">
+          <div class="course-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Mobile App Development</h3>
+        </div>
+        
+        <div class="course-content">
+          <p>Create mobile applications for Android and iOS using cross-platform technologies. Focus on developing solutions for local markets with offline capabilities.</p>
+          
+          <div class="course-details-enhanced">
+            <div class="course-detail">
+              <i class="fas fa-clock"></i>
+              <span>14 weeks</span>
+            </div>
+            <div class="course-detail">
+              <i class="fas fa-signal"></i>
+              <span>Intermediate</span>
+            </div>
+            <div class="course-detail">
+              <i class="fas fa-certificate"></i>
+              <span>Certificate</span>
+            </div>
+          </div>
+          
+          <div class="course-stats">
+            <div class="course-stat">
+              <div class="stat-number">720<span>+</span></div>
+              <div class="stat-label">Graduates</div>
+            </div>
+            <div class="course-stat">
+              <div class="stat-number">80<span>%</span></div>
+              <div class="stat-label">Employment Rate</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="course-footer">
+          <a href="{% url 'contact' %}" class="course-button">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="courses-cta">
+      <a href="{% url 'contact' %}" class="cta-btn-enhanced">
+        <span>Explore All Courses</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+  <!-- Success Stories Section -->
+  <section class="success-stories-enhanced reveal-on-scroll">
+    <div class="section-waves-bottom">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#ffa500" fill-opacity="0.2" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,224C672,213,768,171,864,149.3C960,128,1056,128,1152,149.3C1248,171,1344,213,1392,234.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+    
+    <div class="container">
+      <h2 class="section-title-enhanced">Success Stories</h2>
+      <p class="section-intro-enhanced">Meet some of our graduates who have transformed their careers through our training programs</p>
+      
+      <div class="stories-slider">
+        <div class="story-card">
+          <div class="story-image">
+            <div class="image-placeholder-enhanced">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+          </div>
+          <div class="story-content">
+            <h3>James Ochieng</h3>
+            <p class="story-title">AI Fundamentals Graduate</p>
+            <p class="story-text">"After completing the AI Fundamentals course, I secured a position as a junior data analyst at a fintech company in Nairobi. The practical skills I learned, especially in data processing for low-resource environments, gave me an edge over other candidates."</p>
+            <div class="story-outcome">
+              <span class="outcome-label">Current Role:</span>
+              <span class="outcome-value">Data Analyst at M-KOPA Solar</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="story-card">
+          <div class="story-image">
+            <div class="image-placeholder-enhanced">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+          </div>
+          <div class="story-content">
+            <h3>Grace Muthoni</h3>
+            <p class="story-title">Web Development Graduate</p>
+            <p class="story-text">"I was a teacher with basic computer skills when I joined the Web Development course. Today, I run my own web design business serving local businesses in Kitui County. The course's focus on optimization for rural internet conditions has been invaluable for my clients."</p>
+            <div class="story-outcome">
+              <span class="outcome-label">Current Role:</span>
+              <span class="outcome-value">Founder, GraceTech Web Solutions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services Section with Animated Cards -->
+  <section class="related-services-enhanced reveal-on-scroll">
+    <div class="container">
+      <h2 class="section-title-enhanced">Related Services</h2>
+      <div class="related-services-grid-enhanced">
+        <div class="related-service-card-enhanced">
+          <div class="card-icon-animated">
+            <i class="fas fa-wifi"></i>
+          </div>
+          <h3>Rural Internet</h3>
+          <p>Get the connectivity you need to access our online learning platform.</p>
+          <a href="{% url 'internet' %}" class="btn-learn-more-enhanced">
+            <span>Learn More</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        
+        <div class="related-service-card-enhanced">
+          <div class="card-icon-animated">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Software Development</h3>
+          <p>Put your new skills to work with our software development services.</p>
+          <a href="{% url 'software' %}" class="btn-learn-more-enhanced">
+            <span>Learn More</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="cta-section-enhanced reveal-on-scroll">
+    <div class="container">
+      <div class="cta-content-enhanced">
+        <h2>Ready to Start Your Learning Journey?</h2>
+        <p>Join thousands of students who have transformed their careers through our training programs.</p>
+        <a href="{% url 'contact' %}" class="cta-btn-large">
+          <span>Enroll Today</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="{% static 'images/logo.png' %}" alt="Cyber Host Logo" class="footer-logo-img">
+          <p>Empowering Connections, Anywhere</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'mission' %}">Our Mission</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-services">
+          <h3>Our Services</h3>
+          <ul>
+            <li><a href="{% url 'internet' %}">Rural Internet</a></li>
+            <li><a href="{% url 'it_support' %}">IT Support</a></li>
+            <li><a href="{% url 'software' %}">Software Development</a></li>
+            <li><a href="{% url 'web_ai' %}">Web & AI Training</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:support@cyberhost-africa.com" class="email-link">support@cyberhost-africa.com</a></li>
+            <li><i class="fas fa-phone"></i> <a href="tel:+254718011566" class="phone-link">+254718011566</a></li>
+            <li><i class="fas fa-map-marker-alt"></i> Nairobi / Kenya</li>
+          </ul>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Cyber Host Technologies. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/service-pages.js' %}"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Neural network animation
+      function connectNodes() {
+        const nodes = document.querySelectorAll('.neural-node');
+        const canvas = document.createElement('canvas');
+        const neuralBg = document.querySelector('.neural-network-bg');
+        
+        if (!neuralBg) return;
+        
+        neuralBg.appendChild(canvas);
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        canvas.style.position = 'absolute';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.zIndex = '0';
+        
+        const ctx = canvas.getContext('2d');
+        
+        function drawConnections() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          
+          for (let i = 0; i < nodes.length; i++) {
+            for (let j = i + 1; j < nodes.length; j++) {
+              const node1 = nodes[i].getBoundingClientRect();
+              const node2 = nodes[j].getBoundingClientRect();
+              
+              const x1 = node1.left + node1.width / 2;
+              const y1 = node1.top + node1.height / 2;
+              const x2 = node2.left + node2.width / 2;
+              const y2 = node2.top + node2.height / 2;
+              
+              const distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+              
+              if (distance < 300) {
+                const opacity = 1 - distance / 300;
+                
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y2);
+                ctx.strokeStyle = `rgba(255, 165, 0, ${opacity * 0.5})`;
+                ctx.lineWidth = 1;
+                ctx.stroke();
+              }
+            }
+          }
+          
+          requestAnimationFrame(drawConnections);
+        }
+        
+        drawConnections();
+        
+        window.addEventListener('resize', function() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        });
+      }
+      
+      connectNodes();
+      
+      // Reveal elements on scroll
+      const revealElements = document.querySelectorAll('.reveal-on-scroll');
+      
+      function checkReveal() {
+        for (let i = 0; i < revealElements.length; i++) {
+          const windowHeight = window.innerHeight;
+          const elementTop = revealElements[i].getBoundingClientRect().top;
+          const elementVisible = 150;
+          
+          if (elementTop < windowHeight - elementVisible) {
+            revealElements[i].classList.add('active');
+          }
+        }
+      }
+      
+      window.addEventListener('scroll', checkReveal);
+      checkReveal(); // Check on load
+    });
+  </script>
+  <script src="{% static 'js/content-fix.js' %}"></script>
+</body>
+</html>

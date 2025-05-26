@@ -1,0 +1,425 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rural Internet Provision - Cyber Host Technologies</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/service-pages.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="{% static 'css/content-fixes.css' %}">
+</head>
+<body class="page-service-detail">
+  <!-- Animated Background Elements -->
+  <div class="animated-bg">
+    <div class="signal-wave wave1"></div>
+    <div class="signal-wave wave2"></div>
+    <div class="signal-wave wave3"></div>
+  </div>
+  
+  <!-- Background image with gradient overlay -->
+  <div class="background"></div>
+  <div class="gradient-overlay"></div>
+  
+  <!-- Header container for fixed elements -->
+  <div class="header-container">
+    <!-- Fixed Logo -->
+    <div class="logo-wrapper">
+      <a href="{% url 'home' %}">
+        <img src="{% static 'images/logo.png' %}" alt="Cyber Host Logo" class="fixed-logo" />
+      </a>
+      <span class="tooltip">Cyber Host</span>
+    </div>
+
+    <!-- Top Right Navigation -->
+    <div class="nav-wrapper">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>  
+      <nav class="top-nav" id="main-nav">
+        <a href="{% url 'home' %}" class="top-link">Home</a>
+        <a href="{% url 'mission' %}" class="top-link">Our Mission</a>
+        <a href="{% url 'services' %}" class="top-link active">Services</a>
+        <a href="{% url 'about' %}" class="top-link">About Us</a>
+        <a href="{% url 'contact' %}" class="top-link">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Animated Page Header -->
+  <div class="page-header animate__animated animate__fadeIn">
+    <div class="container">
+      <div class="header-content">
+        <div class="service-icon-large animate__animated animate__bounceIn animate__delay-1s">
+          <i class="fas fa-satellite-dish"></i>
+        </div>
+        <h1 class="animate__animated animate__fadeInUp animate__delay-1s">Rural Internet Provision</h1>
+        <div class="header-line animate__animated animate__fadeInLeft animate__delay-1s"></div>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">Connecting the unconnected with reliable, high-speed internet</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Detail Section with Interactive Elements -->
+  <section class="service-detail-enhanced">
+    <div class="floating-tech-elements">
+      <div class="tech-element" style="--delay: 0s;"><i class="fas fa-satellite"></i></div>
+      <div class="tech-element" style="--delay: 2s;"><i class="fas fa-wifi"></i></div>
+      <div class="tech-element" style="--delay: 4s;"><i class="fas fa-globe-africa"></i></div>
+      <div class="tech-element" style="--delay: 6s;"><i class="fas fa-solar-panel"></i></div>
+      <div class="tech-element" style="--delay: 8s;"><i class="fas fa-broadcast-tower"></i></div>
+    </div>
+    
+    <div class="container">
+      <div class="service-content reveal-on-scroll">
+        <h2 class="gradient-text">Internet Provision via Starlink</h2>
+        <p class="enhanced-text">We offer fast, stable internet in rural regions using Starlink technology. Perfect for schools, homes, clinics, and businesses far from traditional ISPs. Our proprietary deployment model makes this cutting-edge technology economically viable even in the most remote areas.</p>
+      
+        <div class="service-features-enhanced">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-tachometer-alt"></i>
+            </div>
+            <h4>High-Speed Connectivity</h4>
+            <p>Experience speeds up to 150 Mbps even in the most remote locations, enabling video conferencing, cloud applications, and digital learning without interruption.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-school"></i>
+            </div>
+            <h4>School Connectivity</h4>
+            <p>Special packages for educational institutions to enable digital learning, with discounted rates and bundled educational content through our learning platform.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-building"></i>
+            </div>
+            <h4>Business Solutions</h4>
+            <p>Reliable internet for businesses to connect with customers and partners globally, with dedicated bandwidth options and priority technical support.</p>
+          </div>
+        </div>
+      
+        <a href="{% url 'contact' %}" class="cta-btn-enhanced">
+          <span>Get Connected Today</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    
+      <!-- IMAGE PLACEHOLDER with animation -->
+      <div class="service-image reveal-on-scroll">
+        <div class="image-placeholder-enhanced">
+          <div class="image-icon-animated">
+            <i class="fas fa-satellite-dish"></i>
+          </div>
+          <p>Our technicians installing a Starlink dish at a rural school in Kisumu County, providing the first-ever internet connection to over 300 students.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section with Interactive Timeline -->
+  <section class="how-it-works-enhanced reveal-on-scroll">
+    <div class="section-waves">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#ffa500" fill-opacity="0.2" d="M0,192L48,176C96,160,192,128,288,122.7C384,117,480,139,576,165.3C672,192,768,224,864,213.3C960,203,1056,149,1152,138.7C1248,128,1344,160,1392,176L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+      </svg>
+    </div>
+    
+    <div class="container">
+      <h2 class="section-title-enhanced">How It Works</h2>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3>Initial Assessment</h3>
+            <p>We evaluate your location and connectivity needs to determine the best solution.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>Equipment Installation</h3>
+            <p>Our technicians install and configure the Starlink equipment at your location.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-icon">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <h3>Network Setup</h3>
+            <p>We set up your local network to ensure all your devices can connect properly.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>Ongoing Support</h3>
+            <p>We provide continuous technical support to ensure your connection remains stable.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study Section with Creative Layout -->
+  <section class="case-study-enhanced reveal-on-scroll">
+    <div class="container">
+      <h2 class="section-title-enhanced">Success Story: Transforming Education Through Connectivity</h2>
+    
+    <div class="case-study-content-enhanced">
+      <div class="case-study-text-enhanced">
+        <div class="case-study-header">
+          <div class="case-icon">
+            <i class="fas fa-school"></i>
+          </div>
+          <h3>Connecting Kisumu County School</h3>
+        </div>
+        
+        <p>We installed Starlink internet at a remote school in Kisumu County, enabling 300+ students to access online learning resources for the first time. The school now offers coding and AI classes using our LMS platform.</p>
+        
+        <div class="testimonial-enhanced">
+          <div class="quote-marks"><i class="fas fa-quote-left"></i></div>
+          <blockquote>
+            The internet connection has transformed our school. Our students now have access to the same resources as schools in urban areas.
+          </blockquote>
+          <div class="testimonial-author-enhanced">
+            <div class="author-image">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <div class="author-details">
+              <p class="author-name">School Principal</p>
+              <p class="author-title">Kisumu County</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- IMAGE PLACEHOLDER with animation -->
+      <div class="case-study-image-enhanced">
+        <div class="image-placeholder-enhanced">
+          <div class="image-icon-animated">
+            <img src="{% static '/images/students.png' %}" alt="Students Image" class="section-image">
+          </div>
+          <div class="image-caption">
+            <p>Students at a Kisumu County school using tablets connected to Starlink internet to access educational resources and participate in coding classes.</p>
+          </div>
+        </div>
+        
+        <div class="image-decoration">
+          <div class="decoration-circle"></div>
+          <div class="decoration-line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Coverage Map Section -->
+  <section class="coverage-map-section reveal-on-scroll">
+    <div class="container">
+      <h2 class="section-title-enhanced">Our Coverage Areas</h2>
+      <p class="section-intro-enhanced">We're rapidly expanding our coverage across Kenya, with a focus on underserved rural communities</p>
+      
+      <div class="map-container">
+        <div class="map-placeholder-enhanced">
+          <div class="map-icon">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <div class="map-regions">
+            <div class="map-region active" data-region="kitui">
+              <h4>Kisumu County</h4>
+              <p>5 schools, 2 health centers, 11+ businesses connected</p>
+            </div>
+            <div class="map-region" data-region="machakos">
+              <h4>Homabay County</h4>
+              <p>2 schools, 2 health centers, 5+ businesses connected</p>
+            </div>
+            <div class="map-region" data-region="makueni">
+              <h4>Migori County</h4>
+              <p>3 schools, 1 health centers, 5+ businesses connected</p>
+            </div>
+            <div class="map-region" data-region="kajiado">
+              <h4>Machakos County</h4>
+              <p>2 schools, 2 health centers, 10+ businesses connected</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="coverage-stats">
+          <div class="coverage-stat">
+            <div class="stat-number">8</div>
+            <div class="stat-label">Schools Connected</div>
+          </div>
+          <div class="coverage-stat">
+            <div class="stat-number">7</div>
+            <div class="stat-label">Health Centers</div>
+          </div>
+          <div class="coverage-stat">
+            <div class="stat-number">31+</div>
+            <div class="stat-label">Businesses</div>
+          </div>
+          <div class="coverage-stat">
+            <div class="stat-number">7+</div>
+            <div class="stat-label">Community Centers</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services Section with Animated Cards -->
+  <section class="related-services-enhanced reveal-on-scroll">
+  <div class="container">
+    <h2 class="section-title-enhanced">Related Services</h2>
+    <div class="related-services-grid-enhanced">
+      <div class="related-service-card-enhanced">
+        <div class="card-icon-animated">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <h3>IT Support</h3>
+        <p>Comprehensive technical support for your new internet connection.</p>
+        <a href="{% url 'it_support' %}" class="btn-learn-more-enhanced">
+          <span>Learn More</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      
+      <div class="related-service-card-enhanced">
+        <div class="card-icon-animated">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h3>AI Training LMS</h3>
+        <p>Take advantage of your new connection with our learning platform.</p>
+        <a href="{% url 'web_ai' %}" class="btn-learn-more-enhanced">
+          <span>Learn More</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Call to Action Section -->
+  <section class="cta-section-enhanced reveal-on-scroll">
+    <div class="container">
+      <div class="cta-content-enhanced">
+        <h2>Ready to Connect Your Community?</h2>
+        <p>Join hundreds of schools, businesses, and communities that have transformed their digital experience with our internet solutions.</p>
+        <a href="{% url 'contact' %}" class="cta-btn-large">
+          <span>Get Connected Today</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="{% static 'images/logo.png' %}" alt="Cyber Host Logo" class="footer-logo-img">
+          <p>Empowering Connections, Anywhere</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'mission' %}">Our Mission</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-services">
+          <h3>Our Services</h3>
+          <ul>
+            <li><a href="{% url 'internet' %}">Rural Internet</a></li>
+            <li><a href="{% url 'it_support' %}">IT Support</a></li>
+            <li><a href="{% url 'software' %}">Software Development</a></li>
+            <li><a href="{% url 'web_ai' %}">Web & AI Training</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:support@cyberhost-africa.com" class="email-link">support@cyberhost-africa.com</a></li>
+            <li><i class="fas fa-phone"></i> <a href="tel:+254718011566" class="phone-link">+254718011566</a></li>
+            <li><i class="fas fa-map-marker-alt"></i> Nairobi / Kenya</li>
+          </ul>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Cyber Host Technologies. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/service-pages.js' %}"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Map region interaction
+      const mapRegions = document.querySelectorAll('.map-region');
+      mapRegions.forEach(region => {
+        region.addEventListener('click', function() {
+          mapRegions.forEach(r => r.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+      
+      // Reveal elements on scroll
+      const revealElements = document.querySelectorAll('.reveal-on-scroll');
+      
+      function checkReveal() {
+        for (let i = 0; i < revealElements.length; i++) {
+          const windowHeight = window.innerHeight;
+          const elementTop = revealElements[i].getBoundingClientRect().top;
+          const elementVisible = 150;
+          
+          if (elementTop < windowHeight - elementVisible) {
+            revealElements[i].classList.add('active');
+          }
+        }
+      }
+      
+      window.addEventListener('scroll', checkReveal);
+      checkReveal(); // Check on load
+    });
+  </script>
+  <script src="{% static 'js/content-fix.js' %}"></script>
+</body>
+</html>

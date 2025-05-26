@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Mission - Cyber Host Technologies</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/content-fix.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body id="page-mission">
+  <!-- Background image with gradient overlay -->
+  <div class="gradient-overlay"></div>
+  
+  <!-- Header container for fixed elements -->
+  <div class="header-container">
+    <!-- Fixed Logo -->
+    <div class="logo-wrapper">
+      <a href="{% url 'home' %}">
+        <img src="{% static 'images/logo.png' %}" alt="Cyber Host Logo" class="fixed-logo" />
+      </a>
+      <span class="tooltip">Cyber Host</span>
+    </div>
+
+    <!-- Top Right Navigation -->
+    <div class="nav-wrapper">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>  
+      <nav class="top-nav" id="main-nav">
+        <a href="{% url 'home' %}" class="top-link">Home</a>
+        <a href="{% url 'mission' %}" class="top-link active">Our Mission</a>
+        <a href="{% url 'services' %}" class="top-link">Services</a>
+        <a href="{% url 'about' %}" class="top-link">About Us</a>
+        <a href="{% url 'contact' %}" class="top-link">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>Our Mission</h1>
+      <p>Empowering communities through technology and connectivity</p>
+    </div>
+  </div>
+
+  <!-- Mission Statement Section -->
+  <section class="mission-section">
+    <div class="container">
+      <div class="mission-content">
+        <h2>Our Mission Statement</h2>
+        <p>Empowering underserved communities across Kenya with reliable internet access, hands-on technical support, future-ready AI training, and powerful digital tools — because no one should be left behind in the digital age.</p>
+        <p>At Cyber Host Technologies, we believe that access to technology and the internet is not a luxury but a necessity in today's world. Our mission drives everything we do, from connecting remote villages to training the next generation of tech innovators.</p>
+        <p>We've developed a sustainable business model that allows us to deliver cutting-edge technology solutions while maintaining our commitment to social impact. By serving both commercial clients and underserved communities, we create a virtuous cycle where business success fuels our mission-driven initiatives.</p>
+        <a href="{% url 'about' %}" class="btn-learn-more">Learn More About Us</a>
+      </div>
+      <!-- IMAGE PLACEHOLDER -->
+      <div class="mission-image">
+        <!-- Add an image here showing community impact -->
+        <div class="image-placeholder" data-alt="Community Impact Image">
+          <img src="{% static '/images/community-mission.png' %}" alt="Community Impact Image" class="section-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision Section -->
+  <section class="vision-section">
+    <div class="container">
+      <!-- IMAGE PLACEHOLDER -->
+      <div class="vision-image">
+        <div class="image-placeholder" data-alt="Vision Image">
+          <img src="{% static '/images/vision.png' %}" alt="Vision Image" class="section-image">
+        </div>
+      </div>
+      <div class="vision-content">
+        <h2>Our Vision</h2>
+        <p>A connected Kenya where rural and urban communities have equal access to digital tools and opportunities, positioning the country as a leader in inclusive technological development.</p>
+        <p>We envision a future where location is no longer a barrier to digital inclusion, where every Kenyan has the tools and skills to participate in the global digital economy, and where technology serves as a bridge rather than a divide.</p>
+        <p>By 2030, we aim to have connected over 1,000 rural communities, trained 100,000 students in digital skills, and helped establish Kenya as a model for inclusive technological development that other African nations can follow.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Goals Section -->
+  <section class="impact-section">
+    <div class="container">
+      <h2>Our Impact Goals for 2025-2030</h2>
+      <div class="impact-grid">
+        <div class="impact-card">
+          <div class="impact-icon">
+            <i class="fas fa-wifi"></i>
+          </div>
+          <h3>Connect 1,000+ Rural Communities</h3>
+          <p>Bring reliable internet to over 1,000 underserved communities across Kenya by 2030, starting with 100 by the end of 2025.</p>
+          <p class="impact-progress">Current progress: 52 communities connected</p>
+        </div>
+        
+        <div class="impact-card">
+          <div class="impact-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>Train 100,000 Students</h3>
+          <p>Provide AI and coding education to 100,000 students in rural and urban schools through our proprietary learning platform.</p>
+          <p class="impact-progress">Current progress: 5,200 students enrolled</p>
+        </div>
+        
+        <div class="impact-card">
+          <div class="impact-icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3>Support 5,000 Local Businesses</h3>
+          <p>Help 5,000 local businesses digitize their operations, access new markets, and increase revenues through technology adoption.</p>
+          <p class="impact-progress">Current progress: 217 businesses supported</p>
+        </div>
+        
+        <div class="impact-card">
+          <div class="impact-icon">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <h3>Create 2,000 Tech Jobs</h3>
+          <p>Generate 2,000 new technology jobs in underserved communities through direct employment and skills development.</p>
+          <p class="impact-progress">Current progress: 83 jobs created</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="{% static 'images/logo.png' %}" alt="Cyber Host Logo" class="footer-logo-img">
+          <p>Empowering Connections, Anywhere</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'mission' %}">Our Mission</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-services">
+          <h3>Our Services</h3>
+          <ul>
+            <li><a href="{% url 'internet' %}">Rural Internet</a></li>
+            <li><a href="{% url 'it_support' %}">IT Support</a></li>
+            <li><a href="{% url 'software' %}">Software Development</a></li>
+            <li><a href="{% url 'web_ai' %}">Web & AI Training</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:support@cyberhost-africa.com" class="email-link">support@cyberhost-africa.com</a></li>
+            <li><i class="fas fa-phone"></i> <a href="tel:+254718011566" class="phone-link">+254718011566</a></li>
+            <li><i class="fas fa-map-marker-alt"></i> Nairobi / Kenya</li>
+          </ul>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Cyber Host Technologies. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/content-fix.js' %}"></script>
+</body>
+</html>

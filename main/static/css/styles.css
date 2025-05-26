@@ -1,0 +1,1175 @@
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* This helps when navigating to anchor links */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  min-height: 100%;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  position: relative;
+}
+
+/* Custom SimpleBar styling */
+.simplebar-scrollbar::before {
+  background-color: #ffa500 !important;
+  width: 10px !important;
+  border-radius: 10px !important;
+  opacity: 0.9 !important; /* Increased opacity for better visibility */
+}
+
+.simplebar-scrollbar.simplebar-visible:before {
+  opacity: 1 !important; /* Full opacity when visible */
+}
+
+.simplebar-track.simplebar-vertical {
+  width: 14px !important;
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-radius: 10px !important;
+  right: 2px !important;
+}
+
+/* Make sure the scrollbar handle is always visible */
+.simplebar-scrollbar {
+  right: 2px !important;
+  width: 10px !important;
+}
+
+/* Hide SimpleBar on mobile */
+@media (max-width: 768px) {
+  .simplebar-track {
+    display: none !important;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Background Elements */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  animation: zoom 20s ease-in-out infinite;
+  z-index: -2;
+}
+
+#page-mission {
+  background: url("../images/mission-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#page-services {
+  background: url("../images/page-services.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#page-about {
+  background: url("../images/page-about.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#page-contact {
+  background: url("../images/page-contact.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.gradient-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: -1;
+}
+
+/* Animations */
+@keyframes zoom {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 10px #ffffff);
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 10px #ffffff) drop-shadow(0 0 20px #ffffff);
+  }
+}
+
+@keyframes spin-bounce {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.1) rotate(10deg) translateY(-3px);
+  }
+  50% {
+    transform: scale(1.05) rotate(-5deg) translateY(0);
+  }
+  75% {
+    transform: scale(1.08) rotate(5deg) translateY(-2px);
+  }
+  100% {
+    transform: scale(1.1) rotate(10deg) translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  40% {
+    transform: translateY(-20px) translateX(-50%);
+  }
+  60% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+}
+
+/* Header Styles */
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none; /* This allows scrolling through the header */
+  background: linear-gradient(to right, rgba(50, 50, 50, 0.95) 0%, rgba(255, 255, 255, 0.95) 50%); /* Darker on left side */
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+  backdrop-filter: blur(5px); /* Modern blur effect */
+  -webkit-backdrop-filter: blur(5px); /* For Safari */
+  transition: all 0.3s ease;
+}
+
+/* Make all children interactive again */
+.header-container > * {
+  pointer-events: auto;
+}
+
+/* Logo Styles */
+.fixed-logo {
+  width: 130px;
+  filter: drop-shadow(0 0 3px rgba(255, 165, 0, 0.5)); /* Softer shadow for logo on white background */
+  animation: pulse 2.5s infinite ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+.fixed-logo:hover {
+  transform: scale(1.1) rotate(10deg);
+  animation: spin-bounce 0.6s ease-in-out;
+  cursor: pointer;
+}
+
+.logo-wrapper {
+  position: relative;
+  display: inline-block;
+  z-index: 999;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: #ffa500;
+  color: white;
+  text-align: center;
+  padding: 6px 12px;
+  border-radius: 6px;
+  position: absolute;
+  top: 110%;
+  left: 0%;
+  transform: translateX(0);
+  font-size: 0.9rem;
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s;
+  opacity: 0;
+  z-index: 9999;
+}
+
+.logo-wrapper:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Navigation Styles */
+.nav-wrapper {
+  position: relative;
+  z-index: 999;
+}
+
+.hamburger {
+  display: none; /* This ensures it's hidden by default on desktop */
+  font-size: 2rem;
+  color: #ffa500;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.top-nav {
+  display: flex;
+  gap: 20px;
+  background-color: transparent; /* Remove background since header has background */
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.top-link {
+  color: #ffa500;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: 0.3s;
+  position: relative;
+}
+
+/* Animated underline effect for nav links */
+.top-link:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #ffa500;
+  transition: all 0.3s ease;
+}
+
+.top-link:hover:after {
+  width: 80%;
+  left: 10%;
+}
+
+.top-link:hover {
+  background-color: rgba(255, 165, 0, 0.1);
+  color: #ffa500;
+}
+
+/* Active Link */
+.top-link.active {
+  background-color: #ffa500;
+  color: white;
+  cursor: default;
+}
+
+.top-link.active:after {
+  width: 0; /* No underline for active link */
+}
+
+/* Hero Section */
+.hero-container {
+  text-align: center;
+  padding-top: 30vh; /* Increased from 25vh to 30vh for better spacing on home page */
+  padding-left: 10px;
+  padding-right: 10px;
+  z-index: 1;
+  position: relative;
+}
+
+.content-panel {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+h1 {
+  font-size: 4.5rem;
+  color: #ffa500;
+  font-weight: 900;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.tagline {
+  font-size: 1.8rem;
+  font-style: italic;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
+  font-weight: 600;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.intro {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3rem;
+  max-width: 900px;
+  margin: 0 auto 30px;
+  color: white;
+  text-align: center;
+  line-height: 1.8;
+  padding: 0 20px;
+}
+
+/* Buttons */
+.cta-btn {
+  background-color: #ffa500;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.3rem;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.cta-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.cta-btn:hover::after {
+  left: 100%;
+}
+
+.cta-btn:hover {
+  background-color: white;
+  color: #ffa500;
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.6);
+  transform: scale(1.05);
+}
+
+.cta-btn.secondary {
+  background-color: transparent;
+  border: 2px solid #ffa500;
+  color: #ffa500;
+  margin-left: 15px;
+}
+
+.cta-btn.secondary:hover {
+  background-color: #ffa500;
+  color: white;
+}
+
+.cta-buttons {
+  margin-top: 30px;
+}
+
+/* Highlighted Text */
+.highlight {
+  color: #ffa500;
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.highlight:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 165, 0, 0.2);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.scroll-indicator svg {
+  width: 40px;
+  height: 40px;
+  fill: white;
+}
+
+/* Section Styles */
+section {
+  padding: 80px 0;
+  position: relative;
+}
+
+section:first-of-type {
+  padding-top: 120px; /* Add extra padding to the first section if it's not preceded by a page-header */
+}
+
+/* Adjust padding for sections that follow a page-header */
+.page-header + section {
+  padding-top: 80px; /* Regular padding is fine here since page-header already has extra padding */
+}
+
+section h2 {
+  font-size: 2.5rem;
+  color: #ffa500;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+/* Mission Section */
+.mission-section {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.mission-section .container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.mission-content {
+  flex: 1;
+}
+
+.mission-image {
+  flex: 1;
+}
+
+.btn-learn-more {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: transparent;
+  border: 2px solid #ffa500;
+  color: #ffa500;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn-learn-more:hover {
+  background-color: #ffa500;
+  color: white;
+}
+
+/* Services Grid */
+.services-highlight {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.service-card {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: #ffa500;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #ffa500;
+}
+
+.service-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #ffa500;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+
+.service-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #ffa500;
+  transition: width 0.3s ease;
+}
+
+.service-link:hover::after {
+  width: 100%;
+}
+
+/* About Preview */
+.about-preview {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.about-preview .container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-image {
+  flex: 1;
+}
+
+/* Testimonial Section */
+.testimonial-section {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.testimonial-card {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quote-icon {
+  font-size: 2rem;
+  color: #ffa500;
+  margin-bottom: 20px;
+}
+
+blockquote {
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.testimonial-author {
+  font-weight: 600;
+  color: #ffa500;
+}
+
+/* Contact CTA */
+.contact-cta {
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  padding: 60px 0;
+}
+
+.contact-cta h2 {
+  margin-bottom: 15px;
+}
+
+.contact-cta p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+/* Footer */
+.site-footer {
+  background-color: white;
+  padding: 70px 0 20px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.footer-logo {
+  text-align: center;
+}
+
+.footer-logo-img {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+.footer-logo p {
+  color: #ffa500;
+}
+
+.footer-links h3,
+.footer-services h3,
+.footer-contact h3 {
+  color: black;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.footer-links ul,
+.footer-services ul,
+.footer-contact ul {
+  list-style: none;
+}
+
+.footer-links li,
+.footer-services li,
+.footer-contact li {
+  margin-bottom: 10px;
+  color: #ffa500;
+}
+
+.footer-links a,
+.footer-services a {
+  color: #ffa500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-services a:hover {
+  color: #cc8400;
+  text-decoration: underline;
+}
+
+/* Add this to your styles.css file */
+.email-link,
+.phone-link {
+  color: #ffa500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+}
+
+.email-link:hover,
+.phone-link:hover {
+  text-decoration: underline;
+  color: #ff8c00;
+}
+
+.footer-contact ul li {
+  position: relative;
+  z-index: 5;
+}
+
+.footer-contact ul li a {
+  position: relative;
+  z-index: 10;
+}
+
+.email-link {
+  color: #ffa500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.email-link:hover {
+  color: #cc8400;
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.social-icons a {
+  color: #ffa500;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 165, 0, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icons a:hover {
+  color: white;
+  background-color: #000000;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-bottom p {
+  color: #ffa500;
+}
+
+/* Page Header */
+.page-header {
+  padding: 180px 0 80px; /* Increased from 150px to 180px */
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.page-header h1 {
+  margin-bottom: 15px;
+}
+
+.page-header p {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* About Page Styles */
+.about-story {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.about-story .container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.values-section {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.value-card {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  color: #ffa500;
+  margin-bottom: 20px;
+}
+
+.value-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #ffa500;
+}
+
+.vision-mission {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.vision-mission .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.vision-box,
+.mission-box {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.team-section {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.team-member {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+}
+
+.team-member h3 {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  color: #ffa500;
+}
+
+.member-role {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Services Page Styles */
+.services-nav {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px 0;
+  position: sticky;
+  top: 80px;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.services-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.services-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.services-nav a:hover {
+  background-color: rgba(255, 165, 0, 0.2);
+  color: #ffa500;
+}
+
+.service-section {
+  padding: 100px 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.service-section.alt-bg {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.service-section .container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.service-section:nth-child(even) .container {
+  flex-direction: row-reverse;
+}
+
+.service-content {
+  flex: 1;
+}
+
+.service-image {
+  flex: 1;
+}
+
+.service-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.feature {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature i {
+  font-size: 2rem;
+  color: #ffa500;
+  margin-bottom: 15px;
+}
+
+.feature h4 {
+  margin-bottom: 10px;
+  color: #ffa500;
+}
+
+.pricing-note {
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  padding: 60px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 15px; /* Slightly less padding on mobile */
+  }
+
+  .content-panel {
+    padding: 30px 20px;
+    margin: 0 15px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .intro {
+    font-size: 1.1rem;
+  }
+
+  /* Then in the media query, change it to display: flex only for mobile */
+  .hamburger {
+    display: flex; /* Only show on mobile */
+  }
+
+  .top-nav {
+    display: none; /* Ensure it's hidden by default on mobile */
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Add subtle border */
+    padding: 15px;
+    margin-top: 10px;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 200px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    animation: slideDown 0.3s ease-out forwards;
+  }
+
+  .top-nav.show {
+    display: flex;
+  }
+
+  .top-link {
+    text-align: right;
+    padding: 10px;
+  }
+
+  .top-link:after {
+    display: none; /* No underline effect on mobile */
+  }
+
+  .mission-section .container,
+  .about-preview .container,
+  .about-story .container,
+  .service-section .container {
+    flex-direction: column;
+  }
+
+  .service-section:nth-child(even) .container {
+    flex-direction: column;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-contact li {
+    justify-content: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-panel {
+    padding: 25px 15px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .tagline {
+    font-size: 1.4rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    font-size: 1.1rem;
+    padding: 12px 24px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cta-btn.secondary {
+    margin-left: 0;
+  }
+
+  section h2 {
+    font-size: 2rem;
+  }
+
+  .services-nav ul {
+    gap: 10px;
+  }
+
+  .services-nav a {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+}

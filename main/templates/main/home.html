@@ -1,0 +1,302 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Host Technologies - Empowering Digital Connections</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    /* Video background specific styles */
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+    }
+    
+    .video-background video {
+      position: absolute;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+    
+    /* Hide the static background on home page */
+    body.home-page .background {
+      display: none;
+    }
+  </style>
+</head>
+<body class="home-page">
+  <!-- Video background -->
+  <div class="video-background">
+    <video autoplay muted loop playsinline>
+      <source src="{% static 'videos/bg.mp4' %}" type="video/mp4">
+      <!-- Fallback to static background if video doesn't load -->
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  
+  <!-- Gradient overlay (keep this for better text visibility) -->
+  <div class="gradient-overlay"></div>
+  
+  <!-- Header container for fixed elements -->
+  <div class="header-container">
+    <!-- Fixed Logo -->
+    <div class="logo-wrapper">
+      <a href="{% url 'home' %}">
+        <img src="{% static 'images/logo.png' %}" alt="Cyber Host Logo" class="fixed-logo" />
+      </a>
+      <span class="tooltip">Cyber Host</span>
+    </div>
+
+    <!-- Top Right Navigation -->
+    <div class="nav-wrapper">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>  
+      <nav class="top-nav" id="main-nav">
+        <a href="{% url 'home' %}" class="top-link active">Home</a>
+        <a href="{% url 'mission' %}" class="top-link">Our Mission</a>
+        <a href="{% url 'services' %}" class="top-link">Services</a>
+        <a href="{% url 'about' %}" class="top-link">About Us</a>
+        <a href="{% url 'contact' %}" class="top-link">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero-container">
+    <div class="content-panel">
+      <h1>Welcome to Cyber Host</h1>
+      <h2 class="tagline">Empowering Connections, Anywhere</h2>
+
+      <p class="intro">
+        At Cyber Host Africa, we connect the <span class="highlight">unconnected</span> with reliable internet in remote regions abandoned by traditional ISPs. We also offer international companies a <span class="highlight">technical presence</span> in Africa, expert data analytics, custom web and mobile apps, world-class <span class="highlight">cloud hosting</span>, responsive support across the continent and cutting-edge <span class="highlight">AI learning tools</span> — all tailored to bring innovation right to your doorstep.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="{% url 'services' %}" class="cta-btn">Our Services</a>
+        <a href="{% url 'contact' %}" class="cta-btn secondary">Contact Us</a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mission Statement Section -->
+  <section class="mission-section">
+    <div class="container">
+      <div class="mission-content">
+        <h2>Our Mission</h2>
+        <p>Empowering underserved communities across Kenya with reliable internet access, hands-on technical support, future-ready AI training, and powerful digital tools — because no one should be left behind in the digital age.</p>
+        <a href="{% url 'about' %}" class="btn-learn-more">Learn More About Us</a>
+      </div>
+      <!-- IMAGE PLACEHOLDER -->
+      <div class="mission-image">
+        <!-- Add an image here showing community impact -->
+        <div class="image-placeholder" data-alt="Community Impact Image">
+          <img src="{% static '/images/community impact.png' %}" alt="Community Impact Image" class="section-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Highlight Section -->
+  <section class="services-highlight">
+    <div class="container">
+      <h2>Our Top Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-wifi"></i>
+          </div>
+          <h3>Rural Internet Provision</h3>
+          <p>Affordable, high-speed Wi-Fi using Starlink technology, designed for remote areas left behind by traditional ISPs.</p>
+          <a href="{% url 'internet' %}" class="service-link">Learn More</a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>IT & Technical Support</h3>
+          <p>End-to-end IT support and infrastructure services across Africa. We also build custom software, mobile apps, and enterprise systems.</p>
+          <a href="{% url 'it_support' %}" class="service-link">Learn More</a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>Web Services + AI Training</h3>
+          <p>Professional website design, hosting, and web apps. Our SaaS-based LMS teaches AI, coding, and computer literacy to youth.</p>
+          <a href="{% url 'web_ai' %}" class="service-link">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Preview Section -->
+  <section class="about-preview">
+    <div class="container">
+      <div class="about-content">
+        <h2>About Us</h2>
+        <p>At Cyber Host Technologies, we believe every Kenyan deserves access to the digital world — no matter their location. Our mission is to provide affordable internet, powerful digital solutions, and practical tech education to unlock potential in every home, business, and school.</p>
+        <a href="{% url 'about' %}" class="btn-learn-more">Learn More</a>
+      </div>
+      <!-- IMAGE PLACEHOLDER -->
+      <div class="about-image">
+        <!-- Add team or founder image here -->
+        <div class="image-placeholder" data-alt="Team Image">
+          <img src="{% static 'images/team-image.png' %}" alt="Team Image" class="section-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="testimonial-section">
+    <div class="container">
+      <h2>Impact Stories</h2>
+      <div class="testimonial-card">
+        <div class="quote-icon">
+          <i class="fas fa-quote-left"></i>
+        </div>
+        <blockquote>
+          "We connected our village school to the internet for the first time ever — now our students are learning AI and coding."
+        </blockquote>
+        <div class="testimonial-author">
+          <p>— A school principal from Kisumu County</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA Section -->
+  <section class="contact-cta">
+    <div class="container">
+      <h2>Ready to Get Connected?</h2>
+      <p>Want to transform your home, business, or school with our services?</p>
+      <a href="{% url 'contact' %}" class="cta-btn">Contact Us Today</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="{% static 'images/logo.png' %}" alt="Cyber Host Logo" class="footer-logo-img">
+          <p>Empowering Connections, Anywhere</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'mission' %}">Our Mission</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-services">
+          <h3>Our Services</h3>
+          <ul>
+            <li><a href="{% url 'internet' %}">Rural Internet</a></li>
+            <li><a href="{% url 'it_support' %}">IT Support</a></li>
+            <li><a href="{% url 'software' %}">Software Development</a></li>
+            <li><a href="{% url 'web_ai' %}">Web & AI Training</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:support@cyberhost-africa.com" class="email-link">support@cyberhost-africa.com</a></li>
+            <li><i class="fas fa-phone"></i> <a href="tel:+254718011566" class="phone-link">+254718011566</a></li>
+            <li><i class="fas fa-map-marker-alt"></i> Nairobi/Kenya</li>
+          </ul>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Cyber Host Technologies. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator" onclick="scrollToContent()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+    </svg>
+  </div>
+
+  <script src="{% static 'js/main.js' %}"></script>
+  
+  <script>
+    // Add this to ensure video plays on mobile devices
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.querySelector('video');
+      if (video) {
+        // Try to play video automatically
+        const playPromise = video.play();
+        
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            // Auto-play was prevented
+            // Show a UI element to let the user manually start playback
+            console.log("Video autoplay was prevented. User may need to interact with the page first.");
+            
+            // Create a play button overlay if needed
+            if (!document.querySelector('.video-play-button')) {
+              const playButton = document.createElement('div');
+              playButton.className = 'video-play-button';
+              playButton.innerHTML = '<i class="fas fa-play"></i>';
+              playButton.style.position = 'fixed';
+              playButton.style.top = '50%';
+              playButton.style.left = '50%';
+              playButton.style.transform = 'translate(-50%, -50%)';
+              playButton.style.zIndex = '1000';
+              playButton.style.fontSize = '3rem';
+              playButton.style.color = 'white';
+              playButton.style.cursor = 'pointer';
+              playButton.style.backgroundColor = 'rgba(0,0,0,0.5)';
+              playButton.style.padding = '20px';
+              playButton.style.borderRadius = '50%';
+              
+              playButton.addEventListener('click', function() {
+                video.play();
+                this.remove();
+              });
+              
+              document.body.appendChild(playButton);
+            }
+          });
+        }
+      }
+    });
+  </script>
+</body>
+</html>

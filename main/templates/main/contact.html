@@ -1,0 +1,371 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Cyber Host Technologies</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body id="page-contact">
+  <!-- Background image with gradient overlay -->
+  <div class="gradient-overlay"></div>
+  
+  <!-- Header container for fixed elements -->
+  <div class="header-container">
+    <!-- Fixed Logo -->
+    <div class="logo-wrapper">
+      <a href="{% url 'home' %}">
+        <img src="{% static 'images/logo.png' %}" alt="Cyber Host Logo" class="fixed-logo" />
+      </a>
+      <span class="tooltip">Cyber Host</span>
+    </div>
+
+    <!-- Top Right Navigation -->
+    <div class="nav-wrapper">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>  
+      <nav class="top-nav" id="main-nav">
+        <a href="{% url 'home' %}" class="top-link">Home</a>
+        <a href="{% url 'mission' %}" class="top-link">Our Mission</a>
+        <a href="{% url 'services' %}" class="top-link">Services</a>
+        <a href="{% url 'about' %}" class="top-link">About Us</a>
+        <a href="{% url 'contact' %}" class="top-link active">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Premium Contact Header -->
+  <div class="contact-header">
+    <div class="container">
+      <div class="header-content">
+        <h1 class="animated-heading">Get In Touch</h1>
+        <p class="header-subtitle">We're ready to connect you to the digital world with innovative solutions tailored to your needs</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Premium Contact Cards -->
+  <section class="contact-cards-section">
+    <div class="container">
+      <div class="cards-container">
+        <div class="premium-card">
+          <div class="card-header">
+            <div class="card-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Visit Us</h3>
+          </div>
+          <div class="card-content">
+            <p>Kenya / Nairobi County</p>
+            <p>Cyber Host Technologies HQ</p>
+          </div>
+        </div>
+        
+        <div class="premium-card">
+          <div class="card-header">
+            <div class="card-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <h3>Call Us</h3>
+          </div>
+          <div class="card-content">
+            <p><a href="tel:+254718011566" class="phone-link">+254718011566</a></p>
+            <p>Mon-Fri, 8am-6pm</p>
+          </div>
+        </div>
+        
+        <div class="premium-card">
+          <div class="card-header">
+            <div class="card-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Email Us</h3>
+          </div>
+          <div class="card-content">
+            <p><a href="mailto:support@cyberhost-africa.com" class="email-link">support@cyberhost-africa.com</a></p>
+            <p>24/7 Digital Support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Contact Form -->
+  <section class="contact-form-section">
+    <div class="form-container">
+      <div class="form-content">
+        <div class="form-header">
+          <h2>Send Us a Message</h2>
+          <p>Fill out the form below and we'll get back to you within 24 hours with a tailored solution for your needs</p>
+        </div>
+        
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <div class="input-wrapper">
+                <input type="text" id="name" name="name" class="premium-input" placeholder="Enter your full name" required>
+                <i class="fas fa-user"></i>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <div class="input-wrapper">
+                <input type="email" id="email" name="email" class="premium-input" placeholder="Enter your email address" required>
+                <i class="fas fa-envelope"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <div class="input-wrapper">
+                <input type="tel" id="phone" name="phone" class="premium-input" placeholder="Enter your phone number">
+                <i class="fas fa-phone"></i>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <div class="input-wrapper">
+                <input type="text" id="subject" name="subject" class="premium-input" placeholder="What is this regarding?" required>
+                <i class="fas fa-tag"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="service">Service of Interest</label>
+            <div class="input-wrapper">
+              <select id="service" name="service" class="premium-input">
+                <option value="">Select a service</option>
+                <option value="internet">Rural Internet</option>
+                <option value="it-support">IT Support</option>
+                <option value="software">Software Development</option>
+                <option value="web-ai">Web & AI Training</option>
+                <option value="other">Other</option>
+              </select>
+              <i class="fas fa-list"></i>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <div class="input-wrapper textarea-wrapper">
+              <textarea id="message" name="message" class="premium-input premium-textarea" rows="5" placeholder="Tell us about your needs or questions" required></textarea>
+              <i class="fas fa-comment-alt"></i>
+            </div>
+          </div>
+          
+          <div class="form-group checkbox-group">
+            <label class="premium-checkbox">
+              <input type="checkbox" name="newsletter">
+              <span class="checkmark"></span>
+            </label>
+            <label for="newsletter">Subscribe to our newsletter for updates on our services and technology tips</label>
+          </div>
+          
+          <button type="submit" class="submit-btn">
+            <span>Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+      
+      <div class="form-image">
+        <div class="image-container">
+          <img src="{% static 'images/contact-illustration.svg' %}" alt="Contact Us Illustration" class="premium-image" onerror="this.onerror=null; this.src='/placeholder.svg?height=500&width=400'; this.alt='Contact Illustration Placeholder'">
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Map Section -->
+  <section class="map-section">
+    <div class="map-container">
+      <div class="map-header">
+        <h2>Find Us</h2>
+      </div>
+      <div class="map-wrapper">
+        <div class="premium-map">
+          <i class="fas fa-map-marked-alt map-icon"></i>
+          <p class="map-text">Interactive Map Coming Soon</p>
+          <p class="map-note">We operate in Nairobi, Kisumu and Mombasa County, Kenya, bringing cutting-edge technology solutions to urban and rural communities</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium FAQ Section -->
+  <section class="faq-section">
+    <div class="faq-container">
+      <div class="faq-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Find quick answers to common questions about our services and solutions</p>
+      </div>
+      
+      <div class="premium-accordion">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>How quickly can you set up internet in a rural area?</h3>
+            <div class="accordion-icon">
+              <i class="fas fa-plus"></i>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body">
+              <p>Typically, we can complete a Starlink installation within 1-2 weeks of confirming your order, depending on your location and specific requirements. Our team will conduct a site assessment first to ensure optimal placement and connectivity.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>What areas do you currently serve?</h3>
+            <div class="accordion-icon">
+              <i class="fas fa-plus"></i>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body">
+              <p>We primarily serve Kenya, with a focus on Nairobi, Kisumu and Mombasa County. However, we can provide certain services to neighboring countries and are continuously expanding our coverage area. Please contact us to discuss your specific location needs.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>How does your LMS work in areas with limited internet?</h3>
+            <div class="accordion-icon">
+              <i class="fas fa-plus"></i>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body">
+              <p>Our Learning Management System is specially designed for low-bandwidth environments with offline capabilities, content caching, and optimized media delivery. Students can download lessons when connected and continue learning offline, with progress syncing when they reconnect.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>What types of businesses do you typically work with?</h3>
+            <div class="accordion-icon">
+              <i class="fas fa-plus"></i>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body">
+              <p>We work with a wide range of clients including schools, small businesses, NGOs, healthcare facilities, and agricultural enterprises. Our solutions are scalable and can be customized to meet the needs of organizations of all sizes and sectors.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>Do you offer payment plans for your services?</h3>
+            <div class="accordion-icon">
+              <i class="fas fa-plus"></i>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body">
+              <p>Yes, we offer flexible payment options including monthly subscriptions and installment plans for hardware purchases. We're committed to making technology accessible and can work with you to find a payment structure that fits your budget.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <div class="cta-content">
+        <h2 class="cta-title">Ready to Transform Your Digital Experience?</h2>
+        <p class="cta-description">Join hundreds of satisfied clients who have enhanced their connectivity and technological capabilities with Cyber Host Technologies. Let's build the future together.</p>
+        <div class="cta-buttons">
+          <a href="{% url 'services' %}" class="cta-btn secondary">
+            <span>Explore Services</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#contactForm" class="cta-btn primary">
+            <span>Contact Us Now</span>
+            <i class="fas fa-paper-plane"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="{% static 'images/logo.png' %}" alt="Cyber Host Logo" class="footer-logo-img">
+          <p>Empowering Connections, Anywhere</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'mission' %}">Our Mission</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-services">
+          <h3>Our Services</h3>
+          <ul>
+            <li><a href="{% url 'internet' %}">Rural Internet</a></li>
+            <li><a href="{% url 'it_support' %}">IT Support</a></li>
+            <li><a href="{% url 'software' %}">Software Development</a></li>
+            <li><a href="{% url 'web_ai' %}">Web & AI Training</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:support@cyberhost-africa.com" class="email-link">support@cyberhost-africa.com</a></li>
+            <li><i class="fas fa-phone"></i> <a href="tel:+254718011566" class="phone-link">+254718011566</a></li>
+            <li><i class="fas fa-map-marker-alt"></i> Nairobi / Kenya</li>
+          </ul>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Cyber Host Technologies. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/contact.js' %}"></script>
+</body>
+</html>
