@@ -1,0 +1,1 @@
+web: gunicorn cyberhost_africa.wsgi:application
